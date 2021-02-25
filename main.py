@@ -13,6 +13,9 @@ hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
 cap = cv2.VideoCapture(0)
 
+#cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+#cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+
 image_width = cap.get(3)
 image_height = cap.get(4)
 
@@ -66,42 +69,55 @@ while cap.isOpened():
         x = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].x * image_width
         y = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].y * image_height
         #right
-        if x > 420 and (y > 160 and y < 320) and currentDirection != "right":
+        if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentDirection != "right":
             print("Right")
             doInput([Key.right], currentDirection, currentDirectionKey)
             currentDirection = "right"
             currentDirectionKey = [Key.right]
         #left
-        elif x < 210 and (y > 160 and y < 320) and currentDirection != "left":
+        elif x < (image_width/3) and (y > image_height/3 and y < image_height * 2/3) and currentDirection != "left":
             print("Left")
             doInput([Key.left], currentDirection, currentDirectionKey)
             currentDirection = "left"
             currentDirectionKey = [Key.left]
         #up
-        elif y < 160 and (x < 420 and x > 210) and currentDirection != "up":
+        elif y < image_height/3 and (x < image_width*2/3 and x > image_width/3) and currentDirection != "up":
             print("up")
             doInput([Key.up], currentDirection, currentDirectionKey)
             currentDirection = "up"
             currentDirectionKey = [Key.up]
         #down
-        elif y > 320 and (x < 420 and x > 210) and currentDirection != "down":
+        elif y > (image_height * 2/3) and (x < image_width*2/3 and x > image_width/3) and currentDirection != "down":
             print("down")
             doInput([Key.down], currentDirection, currentDirectionKey)
             currentDirection = "down"
             currentDirectionKey = [Key.down]
         #up and right
-        elif y < 160 and x > 420 and currentDirection != "upRight":
+        elif y < image_height/3 and x > (image_width * 2/3) and currentDirection != "upRight":
             print("up and right")
             doInput([Key.up, Key.right], currentDirection, currentDirectionKey)
             currentDirection = "upRight"
             currentDirectionKey = [Key.up, Key.right]
-        elif x < 210 and y < 160 and currentDirection != "upLeft":
+        #up and left
+        elif x < image_width/3 and y < image_height/3 and currentDirection != "upLeft":
             print("up and left")
             doInput([Key.up, Key.left], currentDirection, currentDirectionKey)
             currentDirection = "upLeft"
             currentDirectionKey = [Key.up, Key.left]
-
-        elif (x > 210 and x < 420) and (y > 160 and y < 320) and currentDirection != "":
+        #down and left
+        elif(x < image_width/3 and y > image_height * 2/3 and currentDirection != "downLeft"):
+            print("down and left")
+            doInput([Key.down, Key.left], currentDirection, currentDirectionKey)
+            currentDirection = "downLeft"
+            currentDirectionKey = [Key.down, Key.left]
+        #down and right
+        elif(x > image_width * 2/3 and y > image_height * 2/3 and currentDirection !="downRight"):
+            print("down and left")
+            doInput([Key.down, Key.right], currentDirection, currentDirectionKey)
+            currentDirection = "downRight"
+            currentDirectionKey = [Key.down, Key.right]
+        #Stop
+        elif (x > image_width/3 and x < image_width * 2/3) and (y > image_height/3 and y < image_height*2/3) and currentDirection != "":
             print("Stop")
             realeseInput(currentDirection, currentDirectionKey)
             currentDirection = ""
