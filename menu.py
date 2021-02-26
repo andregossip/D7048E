@@ -6,9 +6,53 @@ class ChooseGameUI(QWidget):
     def __init__(self, parent=None):
         super(ChooseGameUI, self).__init__(parent)
         self.title = QLabel("<b> Choose game", self)
-        self.title.move(152,90)
+        self.title.move(145,90)
         self.title.resize(130, 60) 
         self.title.setStyleSheet("font-size: 18px;")
+
+        self.marioButton = QPushButton(self)
+        self.marioButton.setText("Super Mario")
+        self.marioButton.move(130,150)
+        self.marioButton.resize(150, 30)
+        self.marioButton.setStyleSheet("background-color : #e6a57e")
+        QPushButton.setAutoDefault(self.marioButton, True)
+
+        self.snakeButton = QPushButton(self)
+        self.snakeButton.setText("Snake")
+        self.snakeButton.move(130,200)
+        self.snakeButton.resize(150, 30)
+        self.snakeButton.setStyleSheet("background-color : #a1cdce")
+        QPushButton.setAutoDefault(self.snakeButton, True)
+
+        self.flappyBirdButton = QPushButton(self)
+        self.flappyBirdButton.setText("Flappy Bird")
+        self.flappyBirdButton.move(130,250)
+        self.flappyBirdButton.resize(150, 30)
+        self.flappyBirdButton.setStyleSheet("background-color : #beb4c5")
+        QPushButton.setAutoDefault(self.flappyBirdButton, True)
+
+        self.goBackButton = QPushButton(self)
+        self.goBackButton.setText("Go back")
+        self.goBackButton.move(10,460)
+        self.goBackButton.resize(100, 30)
+        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        QPushButton.setAutoDefault(self.goBackButton, True)
+        
+
+class changeControlsUI(QWidget):
+    def __init__(self, parent=None):
+        super(changeControlsUI, self).__init__(parent)
+        self.title = QLabel("<b> Change controls", self)
+        self.title.move(145,90)
+        self.title.resize(130, 60) 
+        self.title.setStyleSheet("font-size: 18px;")
+
+        self.goBackButton = QPushButton(self)
+        self.goBackButton.setText("Go back")
+        self.goBackButton.move(10,460)
+        self.goBackButton.resize(100, 30)
+        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        QPushButton.setAutoDefault(self.goBackButton, True)
 
 
 class MainMenuUI(QWidget):
@@ -80,6 +124,10 @@ class MainWindow(QMainWindow):
         self.ChooseGameUI = ChooseGameUI(self)
         self.setWindowTitle("Choose game")
         self.setCentralWidget(self.ChooseGameUI)
+        #self.ChooseGameUI.marioButton.clicked.connect()
+        #self.ChooseGameUI.snakeButton.clicked.connect()
+        #self.ChooseGameUI.flappyBirdButton.clicked.connect()
+        self.ChooseGameUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
 
     def useWithExt(self):
