@@ -49,6 +49,13 @@ def togglePause():
         keyboard.release(Key.esc)
         isPaused = True
 
+def quitPause():
+    global isPaused
+    if isPaused:
+        keyboard.press(Key.enter)
+        keyboard.release(Key.enter)
+        isPaused = False
+
 while cap.isOpened():
   success, image = cap.read()
   if not success:
@@ -138,8 +145,8 @@ while cap.isOpened():
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
     if(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2):
         togglePause()
-    else:
-        isPaused = False
+    elif(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1):
+        quitPause()
 
   cv2.imshow('MediaPipe Hands', image)
   if cv2.waitKey(5) & 0xFF == 9:
