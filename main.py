@@ -6,7 +6,6 @@ from handRecognition import recognizeLeftHandGesture, recognizeRightHandGesture,
 
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
-
 keyboard = Controller()
 currentDirection = ""
 currentDirectionKey = []
