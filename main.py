@@ -16,9 +16,6 @@ hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
 cap = cv2.VideoCapture(0)
 
-#cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-#cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
-
 image_width = cap.get(3)
 image_height = cap.get(4)
 
@@ -35,7 +32,6 @@ def doInput(key, currentDirection, currentDirectionKeys):
             keyboard.release(buttons)
     for button in key:
         keyboard.press(button)
-    #keyboard.release(key)
 
 def realeseInput(currentdirection, currentDirectionKeys):
     if currentDirection != "":
@@ -43,18 +39,18 @@ def realeseInput(currentdirection, currentDirectionKeys):
             keyboard.release(buttons)
 
 def togglePause():
-    global isPaused
-    if not isPaused:
-        keyboard.press(Key.esc)
-        keyboard.release(Key.esc)
-        isPaused = True
+    #global isPaused
+    #if not isPaused:
+    keyboard.press(Key.esc)
+    keyboard.release(Key.esc)
+    #isPaused = True
 
 def quitPause():
-    global isPaused
-    if isPaused:
-        keyboard.press(Key.enter)
-        keyboard.release(Key.enter)
-        isPaused = False
+    #global isPaused
+    #if isPaused:
+    keyboard.press(Key.enter)
+    #    keyboard.release(Key.enter)
+    #    isPaused = False
 
 while cap.isOpened():
   success, image = cap.read()
@@ -147,6 +143,7 @@ while cap.isOpened():
         togglePause()
     elif(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1):
         quitPause()
+    
 
   cv2.imshow('MediaPipe Hands', image)
   if cv2.waitKey(5) & 0xFF == 9:
