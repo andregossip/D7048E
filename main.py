@@ -11,7 +11,6 @@ keyboard = Controller()
 currentDirection = ""
 currentDirectionKey = []
 isPaused = False
-currentState = False
 # For webcam input:
 hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
@@ -45,11 +44,9 @@ def realeseInput(currentdirection, currentDirectionKeys):
 
 def togglePause():
     global isPaused
-    global currentState
     if not isPaused:
         keyboard.press(Key.esc)
         keyboard.release(Key.esc)
-        currentState = not currentState
         isPaused = True
 
 while cap.isOpened():
@@ -143,10 +140,6 @@ while cap.isOpened():
         togglePause()
     else:
         isPaused = False
-    if currentState:
-        print("Pause")
-    else:
-        print("Unpause")
 
   cv2.imshow('MediaPipe Hands', image)
   if cv2.waitKey(5) & 0xFF == 9:
