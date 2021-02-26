@@ -1,5 +1,5 @@
 import sys
-from PyQt5.QtWidgets import QApplication , QMainWindow , QPushButton , QWidget, QLabel
+from PyQt5.QtWidgets import QComboBox, QMessageBox, QApplication , QMainWindow , QPushButton , QWidget, QLabel
 import os
 
 class ChooseGameUI(QWidget):
@@ -43,8 +43,108 @@ class changeControlsUI(QWidget):
     def __init__(self, parent=None):
         super(changeControlsUI, self).__init__(parent)
         self.title = QLabel("<b> Change controls", self)
-        self.title.move(145,90)
-        self.title.resize(130, 60) 
+        self.title.move(125,90)
+        self.title.resize(150, 60) 
+        self.title.setStyleSheet("font-size: 18px;")
+
+        self.left = QLabel("Left", self)
+        self.left.move(100, 140)
+        self.left.resize(100,40)
+
+        self.leftBox = QComboBox(self)
+        self.leftBox.addItem("Move hand to the left")
+        self.leftBox.addItem("Move head to the left")
+        self.leftBox.addItem("Point to the left")
+        self.leftBox.addItem("...")
+        self.leftBox.addItem("...")
+        self.leftBox.addItem("...")
+        self.leftBox.move(150, 150)
+        self.leftBox.resize(150,20)
+
+        self.right = QLabel("Right", self)
+        self.right.move(100, 170)
+        self.right.resize(100,40)
+
+        self.rightBox = QComboBox(self)
+        self.rightBox.addItem("Move hand to the right")
+        self.rightBox.addItem("Move head to the right")
+        self.rightBox.addItem("Point to the right")
+        self.rightBox.addItem("...")
+        self.rightBox.addItem("...")
+        self.rightBox.addItem("...")
+        self.rightBox.move(150, 180)
+        self.rightBox.resize(150,20)
+
+        self.up = QLabel("Up", self)
+        self.up.move(100, 200)
+        self.up.resize(100,40)
+
+        self.upBox = QComboBox(self)
+        self.upBox.addItem("Move hand up")
+        self.upBox.addItem("Move head up")
+        self.upBox.addItem("Point up")
+        self.upBox.addItem("...")
+        self.upBox.addItem("...")
+        self.upBox.addItem("...")
+        self.upBox.move(150, 210)
+        self.upBox.resize(150,20)
+
+        self.down = QLabel("Down", self)
+        self.down.move(100, 230)
+        self.down.resize(100,40)
+
+        self.downBox = QComboBox(self)
+        self.downBox.addItem("Move hand down")
+        self.downBox.addItem("Move head down")
+        self.downBox.addItem("Point down")
+        self.downBox.addItem("...")
+        self.downBox.addItem("...")
+        self.downBox.addItem("...")
+        self.downBox.move(150, 240)
+        self.downBox.resize(150,20)
+
+        self.esc = QLabel("Esc", self)
+        self.esc.move(100, 260)
+        self.esc.resize(100,40)
+
+        self.escBox = QComboBox(self)
+        self.escBox.addItem("Do peace sign")
+        self.escBox.addItem("...")
+        self.escBox.addItem("...")
+        self.escBox.addItem("...")
+        self.escBox.addItem("...")
+        self.escBox.addItem("...")
+        self.escBox.move(150, 270)
+        self.escBox.resize(150,20)
+
+        self.enter = QLabel("Enter", self)
+        self.enter.move(100, 290)
+        self.enter.resize(100,40)
+
+        self.enterBox = QComboBox(self)
+        self.enterBox.addItem("Point index finger")
+        self.enterBox.addItem("...")
+        self.enterBox.addItem("...")
+        self.enterBox.addItem("...")
+        self.enterBox.addItem("...")
+        self.enterBox.addItem("...")
+        self.enterBox.move(150, 300)
+        self.enterBox.resize(150,20)
+
+        self.goBackButton = QPushButton(self)
+        self.goBackButton.setText("Go back")
+        self.goBackButton.move(10,460)
+        self.goBackButton.resize(100, 30)
+        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        QPushButton.setAutoDefault(self.goBackButton, True)
+
+
+class tutorialUI(QWidget):
+    def __init__(self, parent=None):
+        super(tutorialUI, self).__init__(parent)
+        self.title = QLabel("<b> Tutorial", self)
+        self.title.move(165,90)
+        self.title.resize(150, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
         self.goBackButton = QPushButton(self)
@@ -54,6 +154,28 @@ class changeControlsUI(QWidget):
         self.goBackButton.setStyleSheet("background-color : #ffffff")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
+class useWithExtUI(QWidget):
+    def __init__(self, parent=None):
+        super(useWithExtUI, self).__init__(parent)
+        self.title = QLabel("<b> Use with external game", self)
+        self.title.move(95,90)
+        self.title.resize(250, 60) 
+        self.title.setStyleSheet("font-size: 18px;")
+
+        self.launchButton = QPushButton(self)
+        self.launchButton.setText("Launch")
+        self.launchButton.move(130,150)
+        self.launchButton.resize(150, 30)
+        self.launchButton.setStyleSheet("background-color : #F5bfd2")
+        QPushButton.setAutoDefault(self.launchButton, True)
+
+        self.goBackButton = QPushButton(self)
+        self.goBackButton.setText("Go back")
+        self.goBackButton.move(10,460)
+        self.goBackButton.resize(100, 30)
+        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        QPushButton.setAutoDefault(self.goBackButton, True)
+        
 
 class MainMenuUI(QWidget):
     def __init__(self, parent=None):
@@ -92,8 +214,7 @@ class MainMenuUI(QWidget):
         QPushButton.setAutoDefault(self.tutorialButton, True)
                 
         self.closeButton = QPushButton(self)
-        self.closeButton.setText("Close") 
-        self.closeButton.clicked.connect(self.close)
+        self.closeButton.setText("Close")
         self.closeButton.setShortcut('ESC')
         self.closeButton.move(130,350)
         self.closeButton.resize(150, 30)
@@ -115,7 +236,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.MainMenuUI)
         self.MainMenuUI.gameButton.clicked.connect(self.chooseGame)
         self.MainMenuUI.extButton.clicked.connect(self.useWithExt)
-        self.MainMenuUI.controlButton.clicked.connect(self.controls)
+        self.MainMenuUI.controlButton.clicked.connect(self.changeControls)
         self.MainMenuUI.tutorialButton.clicked.connect(self.tutorial)
         self.MainMenuUI.closeButton.clicked.connect(self.close)
         self.show()
@@ -131,48 +252,35 @@ class MainWindow(QMainWindow):
         self.show()
 
     def useWithExt(self):
-        return
+        self.useWithExtUI = useWithExtUI(self)
+        self.setWindowTitle("Use with external game")
+        self.setCentralWidget(self.useWithExtUI)
+        #self.useWithExtUI.launchButton.clicked.connect()
+        self.useWithExtUI.goBackButton.clicked.connect(self.mainMenu)
+        self.show()
 
-    def controls(self):
-        return
+    def changeControls(self):
+        self.changeControlsUI = changeControlsUI(self)
+        self.setWindowTitle("Change controls")
+        self.setCentralWidget(self.changeControlsUI)
+        self.changeControlsUI.goBackButton.clicked.connect(self.mainMenu)
+        self.show()
 
     def tutorial(self):
-        return
+        self.tutorialUI = tutorialUI(self)
+        self.setWindowTitle("Tutorial")
+        self.setCentralWidget(self.tutorialUI)
+        self.tutorialUI.goBackButton.clicked.connect(self.mainMenu)
+        self.show()
 
     def startMario(self):
         os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
 
     def startSnake(self):
         os.system('cmd /c "cd ./games/snake/ && python snake.py"')
+
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = MainWindow()
     sys.exit(app.exec_())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
