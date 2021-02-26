@@ -3,79 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="005c521e-f7c1-471d-b59b-2868d29def34" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Animation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Camera.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Camera.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Collider.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Collider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Dashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/EntityCollider.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/EntityCollider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Font.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Font.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/GaussianBlur.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/GaussianBlur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Level.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Maths.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Maths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Pause.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Pause.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Sound.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Sprite.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Sprite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Sprites.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Sprites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Spritesheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Spritesheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/Tile.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Tile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/classes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/compile.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/compile.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Coin.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Coin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/CoinBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/CoinBox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/CoinBrick.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/CoinBrick.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/EntityBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/EntityBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Goomba.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Goomba.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Item.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Koopa.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Koopa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Mario.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Mario.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/Mushroom.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/Mushroom.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/RandomBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/RandomBox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/entities/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/entities/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/1.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/1.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/2.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/2.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/3.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/3.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/4.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/4.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/Items.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/Items.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/characters.gif" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/characters.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/font.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/font.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/koopas.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/koopas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/pics.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/pics.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/pictures.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/pictures.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/tiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/tiles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/title_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/title_screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/img/yoshis.png" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/img/yoshis.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/levels/Level1-1.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/levels/Level1-1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/levels/Level1-2.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/levels/Level1-2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/brick-bump.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/brick-bump.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/bump.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/bump.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/coin.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/coin.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/death.wav" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/death.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/kick.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/kick.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/main_theme.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/main_theme.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/pipe.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/pipe.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/powerup.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/powerup.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/powerup_appears.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/powerup_appears.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/small_jump.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/small_jump.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sfx/stomp.ogg" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sfx/stomp.ogg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/Animations.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/Animations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/BackgroundSprites.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/BackgroundSprites.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/Goomba.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/Goomba.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/ItemAnimations.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/ItemAnimations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/Koopa.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/Koopa.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/Mario.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/Mario.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/sprites/RedMushroom.json" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/sprites/RedMushroom.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/traits/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/traits/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/traits/bounce.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/traits/bounce.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/traits/go.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/traits/go.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/traits/jump.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/traits/jump.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super-mario/traits/leftrightwalk.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/traits/leftrightwalk.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,9 +22,54 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MediaPipe/face.py" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="Python.menu">
+  <component name="RunManager" selected="Python.face">
+    <configuration name="Dashboard" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="git" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/games/super_mario/classes" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/games/super_mario/classes/Dashboard.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="face" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="git" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../MediaPipe" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../MediaPipe/face.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="git" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -142,10 +114,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="snake" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="git" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/games/snake" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/games/snake/snake.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.face" />
         <item itemvalue="Python.menu" />
+        <item itemvalue="Python.Dashboard" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.snake" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +159,7 @@
       <workItem from="1614255511205" duration="3063000" />
       <workItem from="1614341303424" duration="71000" />
       <workItem from="1614341377201" duration="656000" />
-      <workItem from="1614342040018" duration="393000" />
+      <workItem from="1614342040018" duration="5096000" />
     </task>
     <servers />
   </component>
@@ -170,29 +167,49 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1614342037835">
+    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1614347060039">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1614342037835" />
-    <state width="1877" height="130" key="GridCell.Tab.0.bottom" timestamp="1614342038664">
+    <state x="740" y="295" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1614347060039" />
+    <state width="1275" height="388" key="GridCell.Tab.0.bottom" timestamp="1614347123928">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="130" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614342038664" />
-    <state width="1877" height="130" key="GridCell.Tab.0.center" timestamp="1614342038664">
+    <state width="1275" height="388" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614347123928" />
+    <state width="1275" height="388" key="GridCell.Tab.0.center" timestamp="1614347123928">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="130" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614342038664" />
-    <state width="1877" height="130" key="GridCell.Tab.0.left" timestamp="1614342038664">
+    <state width="1275" height="388" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614347123928" />
+    <state width="1275" height="388" key="GridCell.Tab.0.left" timestamp="1614347123928">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="130" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614342038664" />
-    <state width="1877" height="130" key="GridCell.Tab.0.right" timestamp="1614342038664">
+    <state width="1275" height="388" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614347123928" />
+    <state width="1275" height="388" key="GridCell.Tab.0.right" timestamp="1614347123928">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1877" height="130" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614342038664" />
+    <state width="1275" height="388" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614347123928" />
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom" timestamp="1614344382644">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1614344382644" />
+    <state width="1877" height="363" key="GridCell.Tab.1.center" timestamp="1614344382643">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1614344382643" />
+    <state width="1877" height="363" key="GridCell.Tab.1.left" timestamp="1614344382643">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1614344382643" />
+    <state width="1877" height="363" key="GridCell.Tab.1.right" timestamp="1614344382643">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="363" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1614344382643" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/git$menu.coverage" NAME="menu Coverage Results" MODIFIED="1614341790546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/git$main.coverage" NAME="main Coverage Results" MODIFIED="1614259178587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/git$menu.coverage" NAME="menu Coverage Results" MODIFIED="1614347005817" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/git$main.coverage" NAME="main Coverage Results" MODIFIED="1614345555498" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/git$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1614345074977" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/games/super_mario" />
+    <SUITE FILE_PATH="coverage/git$Dashboard.coverage" NAME="Dashboard Coverage Results" MODIFIED="1614346060673" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/games/super_mario/classes" />
+    <SUITE FILE_PATH="coverage/git$face.coverage" NAME="face Coverage Results" MODIFIED="1614347123923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../MediaPipe" />
+    <SUITE FILE_PATH="coverage/git$snake.coverage" NAME="snake Coverage Results" MODIFIED="1614345511025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/games/snake" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 import sys
-
 from PyQt5.QtWidgets import QApplication , QMainWindow , QPushButton , QWidget, QLabel
-from games.super_mario.main import main as mario
+import os
+
 class ChooseGameUI(QWidget):
     def __init__(self, parent=None):
         super(ChooseGameUI, self).__init__(parent)
@@ -125,7 +125,7 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Choose game")
         self.setCentralWidget(self.ChooseGameUI)
         self.ChooseGameUI.marioButton.clicked.connect(self.startMario)
-        #self.ChooseGameUI.snakeButton.clicked.connect()
+        self.ChooseGameUI.snakeButton.clicked.connect(self.startSnake)
         #self.ChooseGameUI.flappyBirdButton.clicked.connect()
         self.ChooseGameUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
@@ -140,9 +140,39 @@ class MainWindow(QMainWindow):
         return
 
     def startMario(self):
-        os.system("/games/super-mario/main.py 1")
+        os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
 
+    def startSnake(self):
+        os.system('cmd /c "cd ./games/snake/ && python snake.py"')
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = MainWindow()
     sys.exit(app.exec_())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
