@@ -361,6 +361,9 @@ class MainWindow(QMainWindow):
     def startSnake(self):
         #os.system('cmd /c "cd ./games/snake/ && python snake.py"')
         os.system('cmd /c "cd ./games/snake/"')
+        
+    def minimizeWindow(self):
+        self.showMinimized()
 
 
 if __name__ == '__main__':
