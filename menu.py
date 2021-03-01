@@ -1,6 +1,8 @@
 import sys
 from PyQt5.QtWidgets import QComboBox, QMessageBox, QApplication , QMainWindow , QPushButton , QWidget, QLabel
 import os
+from pynput.keyboard import Key, Controller, Listener
+from pynput import keyboard
 
 class ChooseGameUI(QWidget):
     def __init__(self, parent=None):
@@ -15,6 +17,7 @@ class ChooseGameUI(QWidget):
         self.marioButton.move(130,150)
         self.marioButton.resize(150, 30)
         self.marioButton.setStyleSheet("background-color : #e6a57e")
+        self.marioButton.setFocus()
         QPushButton.setAutoDefault(self.marioButton, True)
 
         self.snakeButton = QPushButton(self)
@@ -37,7 +40,6 @@ class ChooseGameUI(QWidget):
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("background-color : #ffffff")
         QPushButton.setAutoDefault(self.goBackButton, True)
-        
 
 class changeControlsUI(QWidget):
     def __init__(self, parent=None):
@@ -136,6 +138,7 @@ class changeControlsUI(QWidget):
         self.goBackButton.move(10,460)
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
 
 
@@ -152,6 +155,7 @@ class tutorialUI(QWidget):
         self.goBackButton.move(10,460)
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
 
 class useWithExtUI(QWidget):
@@ -174,6 +178,7 @@ class useWithExtUI(QWidget):
         self.goBackButton.move(10,460)
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
@@ -190,6 +195,7 @@ class MainMenuUI(QWidget):
         self.gameButton.move(130,150)
         self.gameButton.resize(150, 30)
         self.gameButton.setStyleSheet("background-color : #F5bfd2")
+        self.gameButton.setFocus()
         QPushButton.setAutoDefault(self.gameButton, True)
 
         self.extButton = QPushButton(self)
@@ -250,12 +256,15 @@ class MainWindow(QMainWindow):
         #self.ChooseGameUI.flappyBirdButton.clicked.connect()
         self.ChooseGameUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
+        #keyboard.press(Key.tab)
+        #keyboard.release(Key.tab)
+        #self.doInput()
 
     def useWithExt(self):
         self.useWithExtUI = useWithExtUI(self)
         self.setWindowTitle("Use with external game")
         self.setCentralWidget(self.useWithExtUI)
-        #self.useWithExtUI.launchButton.clicked.connect()
+        self.useWithExtUI.launchButton.clicked.connect(self.minimizeWindow)
         self.useWithExtUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
 
@@ -274,13 +283,16 @@ class MainWindow(QMainWindow):
         self.show()
 
     def startMario(self):
-        os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
-
+        #os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
+        os.system('cmd /c "cd ./games/super_mario/"')
     def startSnake(self):
-        os.system('cmd /c "cd ./games/snake/ && python snake.py"')
-
-
+        #os.system('cmd /c "cd ./games/snake/ && python snake.py"')
+        os.system('cmd /c "cd ./games/snake/"')
+    def minimizeWindow(self):
+        self.showMinimized()
 if __name__ == '__main__':
+
     app = QApplication(sys.argv)
     w = MainWindow()
+
     sys.exit(app.exec_())
