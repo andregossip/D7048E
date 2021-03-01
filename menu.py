@@ -279,13 +279,13 @@ class MainMenuUI(QWidget):
         self.upGifText.resize(120, 200)
 
         self.downGifLabel = QLabel("", self)
-        self.downGifLabel.move(440,370)
+        self.downGifLabel.move(440,360)
         self.downGif = QMovie("gifs/Tutorial_Down.gif")
         self.downGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
         self.downGifText = QLabel("Go down in the menu", self)
-        self.downGifText.move(530,450)
+        self.downGifText.move(530,440)
         self.downGifText.resize(120, 200)
 
         self.enterGifLabel = QLabel("", self)
