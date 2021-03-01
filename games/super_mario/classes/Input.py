@@ -30,6 +30,7 @@ class Input:
 
         self.entity.traits['goTrait'].boost = pressedKeys[K_LSHIFT]
 
+
     def checkForMouseInput(self, events):
         mouseX, mouseY = pygame.mouse.get_pos()
         if self.isRightMouseButtonPressed(events):
@@ -52,10 +53,10 @@ class Input:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            if event.type == pygame.KEYDOWN and \
-                (event.key == pygame.K_ESCAPE or event.key == pygame.K_F5):
-                self.entity.pause = True
-                self.entity.pauseObj.createBackgroundBlur()
+            #if event.type == pygame.KEYDOWN and \
+            #    (event.key == pygame.K_ESCAPE or event.key == pygame.K_F5):
+            #    self.entity.pause = True
+            #    self.entity.pauseObj.createBackgroundBlur()
 
     def isLeftMouseButtonPressed(self, events):
         return self.checkMouse(events, 1)

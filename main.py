@@ -1,4 +1,5 @@
 import cv2
+import time
 import mediapipe as mp
 from pynput.keyboard import Key, Controller, Listener
 from pynput import keyboard as kb
@@ -9,11 +10,14 @@ mp_hands = mp.solutions.hands
 keyboard = Controller()
 currentDirection = ""
 currentDirectionKey = []
-isPaused = False
+isPressingEnter = False
+isPressingEscape= False
 # For webcam input:
 hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
 cap = cv2.VideoCapture(0)
+
+
 
 image_width = cap.get(3)
 image_height = cap.get(4)
@@ -38,18 +42,18 @@ def realeseInput(currentdirection, currentDirectionKeys):
             keyboard.release(buttons)
 
 def togglePause():
-    #global isPaused
-    #if not isPaused:
-    keyboard.press(Key.esc)
-    keyboard.release(Key.esc)
-    #isPaused = True
+    global isPressingEscape
+    if isPressingEscape:
+        keyboard.press(Key.esc)
+    else:
+        keyboard.release(Key.esc)
 
 def quitPause():
-    #global isPaused
-    #if isPaused:
-    keyboard.press(Key.enter)
-    #    keyboard.release(Key.enter)
-    #    isPaused = False
+    global isPressingEnter
+    if isPressingEnter:
+        keyboard.press(Key.enter)
+    else:
+        keyboard.release(Key.enter)
 
 while cap.isOpened():
   success, image = cap.read()
@@ -139,9 +143,14 @@ while cap.isOpened():
         mp_drawing.draw_landmarks(
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
     if(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2):
+        isPressingEscape = True
         togglePause()
     elif(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1):
+        isPressingEnter = True
         quitPause()
+    else:
+        isPressingEnter = False
+        isPressingEscape = False
     
 
   cv2.imshow('MediaPipe Hands', image)

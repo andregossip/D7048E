@@ -1,7 +1,6 @@
 import pygame
 from scipy.ndimage.filters import *
 
-
 class GaussianBlur:
     def __init__(self, kernelsize=7):
         self.kernel_size = kernelsize
