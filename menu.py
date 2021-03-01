@@ -19,7 +19,7 @@ class ChooseGameUI(QWidget):
         self.marioButton.setText("Super Mario")
         self.marioButton.move(345,335)
         self.marioButton.resize(150, 30)
-        self.marioButton.setStyleSheet("background-color : #e6a57e")
+        self.marioButton.setStyleSheet("background-color : #e6a57e; font-size: 14px;")
         self.marioButton.setFocus()
         QPushButton.setAutoDefault(self.marioButton, True)
 
@@ -27,21 +27,21 @@ class ChooseGameUI(QWidget):
         self.snakeButton.setText("Snake")
         self.snakeButton.move(345,385)
         self.snakeButton.resize(150, 30)
-        self.snakeButton.setStyleSheet("background-color : #a1cdce")
+        self.snakeButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.snakeButton, True)
 
         self.flappyBirdButton = QPushButton(self)
         self.flappyBirdButton.setText("Flappy Bird")
         self.flappyBirdButton.move(345,435)
         self.flappyBirdButton.resize(150, 30)
-        self.flappyBirdButton.setStyleSheet("background-color : #beb4c5")
+        self.flappyBirdButton.setStyleSheet("background-color : #beb4c5; font-size: 14px;")
         QPushButton.setAutoDefault(self.flappyBirdButton, True)
 
         self.goBackButton = QPushButton(self)
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
@@ -50,13 +50,14 @@ class changeControlsUI(QWidget):
         super(changeControlsUI, self).__init__(parent)
         self.title = QLabel("<b> Change controls", self)
         #self.title.move(125,90)
-        self.title.move(370,275)
+        self.title.move(360,275)
         self.title.resize(150, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
         self.left = QLabel("Left", self)
-        self.left.move(340, 325)
+        self.left.move(320, 325)
         self.left.resize(100,40)
+        self.left.setStyleSheet("font-size: 14px;")
 
         self.leftBox = QComboBox(self)
         self.leftBox.addItem("Move hand to the left")
@@ -65,12 +66,14 @@ class changeControlsUI(QWidget):
         self.leftBox.addItem("...")
         self.leftBox.addItem("...")
         self.leftBox.addItem("...")
-        self.leftBox.move(390, 335)
-        self.leftBox.resize(150,20)
+        self.leftBox.move(370, 335)
+        self.leftBox.resize(170,25)
+        self.leftBox.setStyleSheet("font-size: 14px;")
 
         self.right = QLabel("Right", self)
-        self.right.move(340, 355)
+        self.right.move(320, 355)
         self.right.resize(100,40)
+        self.right.setStyleSheet("font-size: 14px;")
 
         self.rightBox = QComboBox(self)
         self.rightBox.addItem("Move hand to the right")
@@ -79,12 +82,14 @@ class changeControlsUI(QWidget):
         self.rightBox.addItem("...")
         self.rightBox.addItem("...")
         self.rightBox.addItem("...")
-        self.rightBox.move(390, 365)
-        self.rightBox.resize(150,20)
+        self.rightBox.move(370, 365)
+        self.rightBox.resize(170,25)
+        self.rightBox.setStyleSheet("font-size: 14px;")
 
         self.up = QLabel("Up", self)
-        self.up.move(340, 385)
+        self.up.move(320, 385)
         self.up.resize(100,40)
+        self.up.setStyleSheet("font-size: 14px;")
 
         self.upBox = QComboBox(self)
         self.upBox.addItem("Move hand up")
@@ -93,12 +98,15 @@ class changeControlsUI(QWidget):
         self.upBox.addItem("...")
         self.upBox.addItem("...")
         self.upBox.addItem("...")
-        self.upBox.move(390, 395)
-        self.upBox.resize(150,20)
+        self.upBox.move(370, 395)
+        self.upBox.resize(170,25)
+        self.upBox.setStyleSheet("font-size: 14px;")
+        
 
         self.down = QLabel("Down", self)
-        self.down.move(340, 415)
+        self.down.move(320, 415)
         self.down.resize(100,40)
+        self.down.setStyleSheet("font-size: 14px;")
 
         self.downBox = QComboBox(self)
         self.downBox.addItem("Move hand down")
@@ -107,12 +115,14 @@ class changeControlsUI(QWidget):
         self.downBox.addItem("...")
         self.downBox.addItem("...")
         self.downBox.addItem("...")
-        self.downBox.move(390, 425)
-        self.downBox.resize(150,20)
+        self.downBox.move(370, 425)
+        self.downBox.resize(170,25)
+        self.downBox.setStyleSheet("font-size: 14px;")
 
         self.esc = QLabel("Esc", self)
-        self.esc.move(340, 445)
+        self.esc.move(320, 445)
         self.esc.resize(100,40)
+        self.esc.setStyleSheet("font-size: 14px;")
 
         self.escBox = QComboBox(self)
         self.escBox.addItem("Do peace sign")
@@ -121,12 +131,14 @@ class changeControlsUI(QWidget):
         self.escBox.addItem("...")
         self.escBox.addItem("...")
         self.escBox.addItem("...")
-        self.escBox.move(390, 455)
-        self.escBox.resize(150,20)
+        self.escBox.move(370, 455)
+        self.escBox.resize(170,25)
+        self.escBox.setStyleSheet("font-size: 14px;")
 
         self.enter = QLabel("Enter", self)
-        self.enter.move(340, 475)
+        self.enter.move(320, 475)
         self.enter.resize(100,40)
+        self.enter.setStyleSheet("font-size: 14px;")
 
         self.enterBox = QComboBox(self)
         self.enterBox.addItem("Point index finger")
@@ -135,14 +147,15 @@ class changeControlsUI(QWidget):
         self.enterBox.addItem("...")
         self.enterBox.addItem("...")
         self.enterBox.addItem("...")
-        self.enterBox.move(390, 485)
-        self.enterBox.resize(150,20)
+        self.enterBox.move(370, 485)
+        self.enterBox.resize(170,25)
+        self.enterBox.setStyleSheet("font-size: 14px;")
 
         self.goBackButton = QPushButton(self)
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
 
@@ -162,6 +175,7 @@ class tutorialUI(QWidget):
         self.upGif.start()
         self.upGifLabel.setMovie(self.upGif)
         self.upGifText = QLabel("some text", self)
+        self.upGifText.setStyleSheet("font-size: 14px;")
         self.upGifText.move(195,240)
         self.upGifText.resize(120, 200)
 
@@ -172,6 +186,7 @@ class tutorialUI(QWidget):
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
         self.downGifText = QLabel("some text", self)
+        self.downGifText.setStyleSheet("font-size: 14px;")
         self.downGifText.move(190,450)
         self.downGifText.resize(120, 200)
 
@@ -182,6 +197,7 @@ class tutorialUI(QWidget):
         self.enterGif.start()
         self.enterGifLabel.setMovie(self.enterGif)
         self.enterGifText = QLabel("Click the selected button", self)
+        self.enterGifText.setStyleSheet("font-size: 14px;")
         self.enterGifText.move(182,660)
         self.enterGifText.resize(120, 200)
 
@@ -189,7 +205,7 @@ class tutorialUI(QWidget):
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
 
@@ -201,18 +217,18 @@ class useWithExtUI(QWidget):
         self.title.resize(250, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
-        self.launchButton = QPushButton(self)
-        self.launchButton.setText("Launch")
-        self.launchButton.move(350,335)
-        self.launchButton.resize(150, 30)
-        self.launchButton.setStyleSheet("background-color : #F5bfd2")
-        QPushButton.setAutoDefault(self.launchButton, True)
+        self.minimizeButton = QPushButton(self)
+        self.minimizeButton.setText("Minimize UI")
+        self.minimizeButton.move(350,335)
+        self.minimizeButton.resize(150, 30)
+        self.minimizeButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
+        QPushButton.setAutoDefault(self.minimizeButton, True)
 
         self.goBackButton = QPushButton(self)
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff")
+        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
         
@@ -231,7 +247,7 @@ class MainMenuUI(QWidget):
         #self.gameButton.move(130,150)
         self.gameButton.move(130,335)
         self.gameButton.resize(150, 30)
-        self.gameButton.setStyleSheet("background-color : #F5bfd2")
+        self.gameButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
         self.gameButton.setFocus()
         QPushButton.setAutoDefault(self.gameButton, True)
 
@@ -240,7 +256,7 @@ class MainMenuUI(QWidget):
         #self.extButton.move(130,200)
         self.extButton.move(130,385)
         self.extButton.resize(150, 30)
-        self.extButton.setStyleSheet("background-color : #a1cdce")
+        self.extButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.extButton, True)
 
         self.controlButton = QPushButton(self)
@@ -248,7 +264,7 @@ class MainMenuUI(QWidget):
         #self.controlButton.move(130,250)
         self.controlButton.move(130,435)
         self.controlButton.resize(150, 30)
-        self.controlButton.setStyleSheet("background-color : #e5db9c")
+        self.controlButton.setStyleSheet("background-color : #e5db9c; font-size: 14px;")
         QPushButton.setAutoDefault(self.controlButton, True)
 
         self.tutorialButton = QPushButton(self)
@@ -256,7 +272,7 @@ class MainMenuUI(QWidget):
         #self.tutorialButton.move(130,300)
         self.tutorialButton.move(130,485)
         self.tutorialButton.resize(150, 30)
-        self.tutorialButton.setStyleSheet("background-color : #beb4c5")
+        self.tutorialButton.setStyleSheet("background-color : #beb4c5; font-size: 14px;")
         QPushButton.setAutoDefault(self.tutorialButton, True)
                 
         self.closeButton = QPushButton(self)
@@ -265,7 +281,7 @@ class MainMenuUI(QWidget):
         #self.closeButton.move(130,350)
         self.closeButton.move(130,535)
         self.closeButton.resize(150, 30)
-        self.closeButton.setStyleSheet("background-color : #e6a57e")
+        self.closeButton.setStyleSheet("background-color : #e6a57e; font-size: 14px;")
         QPushButton.setAutoDefault(self.closeButton, True)
 
         self.upGifLabel = QLabel("", self)
@@ -275,7 +291,8 @@ class MainMenuUI(QWidget):
         self.upGif.start()
         self.upGifLabel.setMovie(self.upGif)
         self.upGifText = QLabel("Go up in the menu", self)
-        self.upGifText.move(535,160)
+        self.upGifText.setStyleSheet("font-size: 14px;")
+        self.upGifText.move(523,160)
         self.upGifText.resize(120, 200)
 
         self.downGifLabel = QLabel("", self)
@@ -285,8 +302,9 @@ class MainMenuUI(QWidget):
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
         self.downGifText = QLabel("Go down in the menu", self)
-        self.downGifText.move(530,440)
-        self.downGifText.resize(120, 200)
+        self.downGifText.setStyleSheet("font-size: 14px;")
+        self.downGifText.move(515,440)
+        self.downGifText.resize(150, 200)
 
         self.enterGifLabel = QLabel("", self)
         self.enterGifLabel.move(440,640)
@@ -295,8 +313,9 @@ class MainMenuUI(QWidget):
         self.enterGif.start()
         self.enterGifLabel.setMovie(self.enterGif)
         self.enterGifText = QLabel("Click the selected button", self)
-        self.enterGifText.move(522,720)
-        self.enterGifText.resize(120, 200)
+        self.enterGifText.setStyleSheet("font-size: 14px;")
+        self.enterGifText.move(507,720)
+        self.enterGifText.resize(150, 200)
 
 
 class MainWindow(QMainWindow):
@@ -336,7 +355,7 @@ class MainWindow(QMainWindow):
         self.useWithExtUI = useWithExtUI(self)
         self.setWindowTitle("Use with external game")
         self.setCentralWidget(self.useWithExtUI)
-        self.useWithExtUI.launchButton.clicked.connect(self.minimizeWindow)
+        self.useWithExtUI.minimizeButton.clicked.connect(self.minimizeWindow)
         self.useWithExtUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
 
