@@ -71,7 +71,7 @@ class changeControlsUI(QWidget):
         self.leftBox.setStyleSheet("font-size: 14px;")
 
         self.right = QLabel("Right", self)
-        self.right.move(320, 355)
+        self.right.move(320, 375)
         self.right.resize(100,40)
         self.right.setStyleSheet("font-size: 14px;")
 
@@ -82,12 +82,12 @@ class changeControlsUI(QWidget):
         self.rightBox.addItem("...")
         self.rightBox.addItem("...")
         self.rightBox.addItem("...")
-        self.rightBox.move(370, 365)
+        self.rightBox.move(370, 385)
         self.rightBox.resize(170,25)
         self.rightBox.setStyleSheet("font-size: 14px;")
 
         self.up = QLabel("Up", self)
-        self.up.move(320, 385)
+        self.up.move(320, 425)
         self.up.resize(100,40)
         self.up.setStyleSheet("font-size: 14px;")
 
@@ -98,13 +98,13 @@ class changeControlsUI(QWidget):
         self.upBox.addItem("...")
         self.upBox.addItem("...")
         self.upBox.addItem("...")
-        self.upBox.move(370, 395)
+        self.upBox.move(370, 435)
         self.upBox.resize(170,25)
         self.upBox.setStyleSheet("font-size: 14px;")
         
 
         self.down = QLabel("Down", self)
-        self.down.move(320, 415)
+        self.down.move(320, 475)
         self.down.resize(100,40)
         self.down.setStyleSheet("font-size: 14px;")
 
@@ -115,12 +115,12 @@ class changeControlsUI(QWidget):
         self.downBox.addItem("...")
         self.downBox.addItem("...")
         self.downBox.addItem("...")
-        self.downBox.move(370, 425)
+        self.downBox.move(370, 485)
         self.downBox.resize(170,25)
         self.downBox.setStyleSheet("font-size: 14px;")
 
         self.esc = QLabel("Esc", self)
-        self.esc.move(320, 445)
+        self.esc.move(320, 525)
         self.esc.resize(100,40)
         self.esc.setStyleSheet("font-size: 14px;")
 
@@ -131,12 +131,12 @@ class changeControlsUI(QWidget):
         self.escBox.addItem("...")
         self.escBox.addItem("...")
         self.escBox.addItem("...")
-        self.escBox.move(370, 455)
+        self.escBox.move(370, 535)
         self.escBox.resize(170,25)
         self.escBox.setStyleSheet("font-size: 14px;")
 
         self.enter = QLabel("Enter", self)
-        self.enter.move(320, 475)
+        self.enter.move(320, 575)
         self.enter.resize(100,40)
         self.enter.setStyleSheet("font-size: 14px;")
 
@@ -147,7 +147,7 @@ class changeControlsUI(QWidget):
         self.enterBox.addItem("...")
         self.enterBox.addItem("...")
         self.enterBox.addItem("...")
-        self.enterBox.move(370, 485)
+        self.enterBox.move(370, 585)
         self.enterBox.resize(170,25)
         self.enterBox.setStyleSheet("font-size: 14px;")
 
@@ -158,7 +158,6 @@ class changeControlsUI(QWidget):
         self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
-
 
 class tutorialUI(QWidget):
     def __init__(self, parent=None):
