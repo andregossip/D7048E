@@ -11,16 +11,13 @@ subprocess.Popen("python menu.py")
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 keyboard = Controller()
-currentDirection = ""
-currentDirectionKey = []
-isPressingEnter = False
-isPressingEscape= False
+currentKey = ""
+currentKeyLabels = []
+
 # For webcam input:
 hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
 cap = cv2.VideoCapture(0)
-
-
 
 image_width = cap.get(3)
 image_height = cap.get(4)
@@ -32,31 +29,17 @@ overlay = cv2.imread('overlay3.png')
 overlay = cv2.resize(overlay, (int(image_width), int(image_height)))
 overlay = cv2.bitwise_not(overlay)
 
-def doInput(key, currentDirection, currentDirectionKeys):
-    if currentDirection != "":
-        for buttons in currentDirectionKeys:
+def doInput(key, currentKey, currentKeyLabels):
+    if currentKey != "":
+        for buttons in currentKeyLabels:
             keyboard.release(buttons)
     for button in key:
         keyboard.press(button)
 
-def realeseInput(currentdirection, currentDirectionKeys):
+def realeseInput(currentDirection, currentKeyLabels):
     if currentDirection != "":
-        for buttons in currentDirectionKeys:
+        for buttons in currentKeyLabels:
             keyboard.release(buttons)
-
-def togglePause():
-    global isPressingEscape
-    if isPressingEscape:
-        keyboard.press(Key.esc)
-    else:
-        keyboard.release(Key.esc)
-
-def quitPause():
-    global isPressingEnter
-    if isPressingEnter:
-        keyboard.press(Key.enter)
-    else:
-        keyboard.release(Key.enter)
 
 while cap.isOpened():
   success, image = cap.read()
@@ -85,66 +68,74 @@ while cap.isOpened():
     for hand_landmarks in results.multi_hand_landmarks:
         x = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].x * image_width
         y = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].y * image_height
-        #right
-        if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentDirection != "right":
-            #print("Right")
-            doInput([Key.right], currentDirection, currentDirectionKey)
-            currentDirection = "right"
-            currentDirectionKey = [Key.right]
-        #left
-        elif x < (image_width/3) and (y > image_height/3 and y < image_height * 2/3) and currentDirection != "left":
-            #print("Left")
-            doInput([Key.left], currentDirection, currentDirectionKey)
-            currentDirection = "left"
-            currentDirectionKey = [Key.left]
-        #up
-        elif y < image_height/3 and (x < image_width*2/3 and x > image_width/3) and currentDirection != "up":
-            #print("up")
-            doInput([Key.up], currentDirection, currentDirectionKey)
-            currentDirection = "up"
-            currentDirectionKey = [Key.up]
-        #down
-        elif y > (image_height * 2/3) and (x < image_width*2/3 and x > image_width/3) and currentDirection != "down":
-            #print("down")
-            doInput([Key.down], currentDirection, currentDirectionKey)
-            currentDirection = "down"
-            currentDirectionKey = [Key.down]
-        #up and right
-        elif y < image_height/3 and x > (image_width * 2/3) and currentDirection != "upRight":
-            #print("up and right")
-            doInput([Key.up, Key.right], currentDirection, currentDirectionKey)
-            currentDirection = "upRight"
-            currentDirectionKey = [Key.up, Key.right]
-        #up and left
-        elif x < image_width/3 and y < image_height/3 and currentDirection != "upLeft":
-            #print("up and left")
-            doInput([Key.up, Key.left], currentDirection, currentDirectionKey)
-            currentDirection = "upLeft"
-            currentDirectionKey = [Key.up, Key.left]
-        #down and left
-        elif(x < image_width/3 and y > image_height * 2/3 and currentDirection != "downLeft"):
-            #print("down and left")
-            doInput([Key.down, Key.left], currentDirection, currentDirectionKey)
-            currentDirection = "downLeft"
-            currentDirectionKey = [Key.down, Key.left]
-        #down and right
-        elif(x > image_width * 2/3 and y > image_height * 2/3 and currentDirection !="downRight"):
-            #print("down and left")
-            doInput([Key.down, Key.right], currentDirection, currentDirectionKey)
-            currentDirection = "downRight"
-            currentDirectionKey = [Key.down, Key.right]
-        #Stop
-        elif (x > image_width/3 and x < image_width * 2/3) and (y > image_height/3 and y < image_height*2/3) and currentDirection != "":
-            #print("Stop")
-            realeseInput(currentDirection, currentDirectionKey)
-            currentDirection = ""
-            currentDirectionKey = []
+
         for landmark in hand_landmarks.landmark:
             keypoints.append(landmark.x)
             keypoints.append(landmark.y)
 
+        if recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2 and currentKey != "esc":
+            print('esc')
+            doInput([Key.esc], currentKey, currentKeyLabels)
+            currentKey = "esc"
+            currentKeyLabels = [Key.esc]
+        elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1 and currentKey != "enter":
+            print('enter')
+            doInput([Key.enter], currentKey, currentKeyLabels)
+            currentKey = "enter"
+            currentKeyLabels = [Key.enter]
+        #right
+        elif x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
+            print('right')
+            doInput([Key.right], currentKey, currentKeyLabels)
+            currentKey = "right"
+            currentKeyLabels = [Key.right]
+        #left
+        elif x < (image_width/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "left":
+            print('left')
+            doInput([Key.left], currentKey, currentKeyLabels)
+            currentKey = "left"
+            currentKeyLabels = [Key.left]
+        #up
+        elif y < image_height/3 and (x < image_width*2/3 and x > image_width/3) and currentKey != "up":
+            print('up')
+            doInput([Key.up], currentKey, currentKeyLabels)
+            currentKey = "up"
+            currentKeyLabels = [Key.up]
+        #down
+        elif y > (image_height * 2/3) and (x < image_width*2/3 and x > image_width/3) and currentKey != "down":
+            print('down')
+            doInput([Key.down], currentKey, currentKeyLabels)
+            currentKey = "down"
+            currentKeyLabels = [Key.down]
+        #up and right
+        elif y < image_height/3 and x > (image_width * 2/3) and currentKey != "upRight":
+            doInput([Key.up, Key.right], currentKey, currentKeyLabels)
+            currentKey = "upRight"
+            currentKeyLabels = [Key.up, Key.right]
+        #up and left
+        elif x < image_width/3 and y < image_height/3 and currentKey != "upLeft":
+            doInput([Key.up, Key.left], currentKey, currentKeyLabels)
+            currentKey = "upLeft"
+            currentKeyLabels = [Key.up, Key.left]
+        #down and left
+        elif x < image_width/3 and y > image_height * 2/3 and currentKey != "downLeft":
+            doInput([Key.down, Key.left], currentKey, currentKeyLabels)
+            currentKey = "downLeft"
+            currentKeyLabels = [Key.down, Key.left]
+        #down and right
+        elif x > image_width * 2/3 and y > image_height * 2/3 and currentKey != "downRight":
+            doInput([Key.down, Key.right], currentKey, currentKeyLabels)
+            currentKey = "downRight"
+            currentKeyLabels = [Key.down, Key.right]
+        #Stop
+        elif (image_width / 3 < x < image_width * 2 / 3) and (y > image_height / 3 and y < image_height * 2 / 3) and currentKey != "":
+            realeseInput(currentKey, currentKeyLabels)
+            currentKey = ""
+            currentKeyLabels = []
+
         mp_drawing.draw_landmarks(
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+    """
     if(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2):
         isPressingEscape = True
         togglePause()
@@ -154,10 +145,10 @@ while cap.isOpened():
     else:
         isPressingEnter = False
         isPressingEscape = False
-    
+    """
 
-  cv2.imshow('MediaPipe Hands', image)
-  if cv2.waitKey(5) & 0xFF == 9:
-    break
+    cv2.imshow('MediaPipe Hands', image)
+    if cv2.waitKey(5) & 0xFF == 9:
+        break
 hands.close()
 cap.release()

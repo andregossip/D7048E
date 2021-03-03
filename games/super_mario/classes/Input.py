@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
 import sys
+import turtle
 
 
 class Input:
@@ -17,6 +18,7 @@ class Input:
 
     def checkForKeyboardInput(self):
         pressedKeys = pygame.key.get_pressed()
+
 
         if pressedKeys[K_LEFT] or pressedKeys[K_h] and not pressedKeys[K_RIGHT]:
             self.entity.traits["goTrait"].direction = -1
@@ -38,7 +40,7 @@ class Input:
                 mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
             )
             self.entity.levelObj.addGoomba(
-                mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
+                mouseY / 32, mouseX / e32 - self.entity.camera.pos.x
             )
             self.entity.levelObj.addRedMushroom(
                 mouseY / 32, mouseX / 32 - self.entity.camera.pos.x
@@ -53,10 +55,10 @@ class Input:
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
-            #if event.type == pygame.KEYDOWN and \
-            #    (event.key == pygame.K_ESCAPE or event.key == pygame.K_F5):
-            #    self.entity.pause = True
-            #    self.entity.pauseObj.createBackgroundBlur()
+            if event.type == pygame.KEYDOWN and \
+                (event.key == 27 or event.key == pygame.K_F5):
+                self.entity.pause = True
+                self.entity.pauseObj.createBackgroundBlur()
 
     def isLeftMouseButtonPressed(self, events):
         return self.checkMouse(events, 1)
