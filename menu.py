@@ -373,12 +373,12 @@ class MainWindow(QMainWindow):
         self.show()
 
     def startMario(self):
-        #os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
-        os.system('cmd /c "cd ./games/super_mario/"')
+        os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
+        # os.system('cmd /c "cd ./games/super_mario/"')
 
     def startSnake(self):
-        #os.system('cmd /c "cd ./games/snake/ && python snake.py"')
-        os.system('cmd /c "cd ./games/snake/"')
+        os.system('cmd /c "cd ./games/snake/ && python snake.py"')
+        # os.system('cmd /c "cd ./games/snake/"')
         
     def minimizeWindow(self):
         self.showMinimized()

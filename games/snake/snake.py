@@ -48,6 +48,16 @@ pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Score: 0  High Score: 0", align="center", font=("Courier", 24, "normal"))
 
+# Pen
+paused = turtle.Turtle()
+paused.speed(0)
+paused.shape("square")
+paused.color("white")
+paused.penup()
+paused.hideturtle()
+paused.goto(0, 0)
+# pause.write("PAUSED", align="center", font=("Courier", 40, "normal"))
+
 # Functions
 def go_up():
     if head.direction != "down" and head.direction != "pause":
@@ -90,10 +100,13 @@ def pause():
     if head.direction != "pause":
         head.lastdirection = head.direction
     head.direction = "pause"
+    paused.clear()
+    paused.write("PAUSED", align="center", font=("Courier", 40, "normal"))
 
 def unpause():
     if head.direction == "pause":
         head.direction = head.lastdirection
+        paused.clear()
 
 
 # Keyboard bindings
