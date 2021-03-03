@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="005c521e-f7c1-471d-b59b-2868d29def34" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/games/super_mario/classes/Input.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/super_mario/classes/Input.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/games/snake/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/games/snake/snake.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/menu.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,6 +207,7 @@
       <workItem from="1614593319870" duration="1914000" />
       <workItem from="1614773788772" duration="2840000" />
       <workItem from="1614776700763" duration="4348000" />
+      <workItem from="1614781130923" duration="19000" />
     </task>
     <servers />
   </component>
