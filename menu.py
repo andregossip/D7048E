@@ -221,6 +221,7 @@ class useWithExtUI(QWidget):
         self.minimizeButton.move(350,335)
         self.minimizeButton.resize(150, 30)
         self.minimizeButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
+        self.minimizeButton.setFocus()
         QPushButton.setAutoDefault(self.minimizeButton, True)
 
         self.goBackButton = QPushButton(self)
@@ -228,7 +229,6 @@ class useWithExtUI(QWidget):
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
-        self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
@@ -332,7 +332,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.MainMenuUI)
         self.MainMenuUI.gameButton.clicked.connect(self.chooseGame)
         self.MainMenuUI.extButton.clicked.connect(self.useWithExt)
-        self.MainMenuUI.controlButton.clicked.connect(self.changeControls)
+        #self.MainMenuUI.controlButton.clicked.connect(self.changeControls)
         self.MainMenuUI.tutorialButton.clicked.connect(self.tutorial)
         self.MainMenuUI.closeButton.clicked.connect(self.close)
         self.show()
