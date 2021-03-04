@@ -6,6 +6,7 @@ from pynput import keyboard as kb
 from handRecognition import recognizeLeftHandGesture, recognizeRightHandGesture, getStructuredLandmarks
 import subprocess
 
+menuStarted = False
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 keyboard = Controller()
