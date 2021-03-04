@@ -29,11 +29,11 @@ class Bird(pygame.sprite.Sprite):
       self.pos=vec(self.rect.center)
       self.fc=0
    def update(self):
-      self.acc=vec(0,1.5/2)
+      self.acc=vec(0,1.0)
       self.vel=vec(0,0)
       keys=pygame.key.get_pressed()
       if keys[pygame.K_UP]:
-         self.acc.y=-1.5/2
+         self.acc.y=-1.0
          if self.fc+1<28:
             self.fc+=1
             self.image=pimg[self.fc//7]
