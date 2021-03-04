@@ -1,6 +1,6 @@
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtGui import QMovie
+from PyQt5.QtGui import QMovie, QPixmap
 from PyQt5.QtWidgets import QComboBox, QMessageBox, QApplication , QMainWindow , QPushButton , QWidget, QLabel
 import os
 from pynput.keyboard import Key, Controller, Listener
@@ -11,30 +11,73 @@ class ChooseGameUI(QWidget):
         super(ChooseGameUI, self).__init__(parent)
         self.title = QLabel("<b> Choose game", self)
         #self.title.move(145,90)
-        self.title.move(360,275)
+        self.title.move(360,50)
         self.title.resize(130, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
+        self.marioLabel = QLabel("", self)
+        self.marioImage = QPixmap("images/marioScaled.JPG")
+        self.marioLabel.setPixmap(self.marioImage)
+        self.marioLabel.move(420,120)
+
+        self.marioText = QLabel("In this classic game you play as\n" +
+                                "Super Mario. Collect all the\n" +
+                                "coins and clear all the levels!\n\n" +
+                                "Key bindings used: left, right, up,\n" +
+                                "escape, enter", self)
+        self.marioText.setStyleSheet("font-size: 14px;")
+        self.marioText.move(190,85)
+        self.marioText.resize(250, 200)
+
         self.marioButton = QPushButton(self)
-        self.marioButton.setText("Super Mario")
-        self.marioButton.move(345,335)
+        self.marioButton.setText("Play Super Mario")
+        #self.marioButton.move(345,335)
+        self.marioButton.move(200,260)
         self.marioButton.resize(150, 30)
-        self.marioButton.setStyleSheet("background-color : #e6a57e; font-size: 14px;")
+        self.marioButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         self.marioButton.setFocus()
         QPushButton.setAutoDefault(self.marioButton, True)
 
+        self.snakeLabel = QLabel("", self)
+        self.snakeImage = QPixmap("images/snakeScaled.JPG")
+        self.snakeLabel.setPixmap(self.snakeImage)
+        self.snakeLabel.move(420,360)
+
+        self.snakeText = QLabel("Steer the snake and collect as\n"+
+                                "many red points as you can.\n"+
+                                "Just don't get tangled up!\n\n"+
+                                "Key bindings used: left, right, up\n"+
+                                "down, escape, enter", self)
+        self.snakeText.setStyleSheet("font-size: 14px;")
+        self.snakeText.move(190,320)
+        self.snakeText.resize(250, 200)
+
         self.snakeButton = QPushButton(self)
-        self.snakeButton.setText("Snake")
-        self.snakeButton.move(345,385)
+        self.snakeButton.setText("Play Snake")
+        #self.snakeButton.move(345,385)
+        self.snakeButton.move(200,490)
         self.snakeButton.resize(150, 30)
         self.snakeButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.snakeButton, True)
 
+        self.flappyBirdLabel = QLabel("", self)
+        self.flappyBirdImage = QPixmap("images/flappyBirdScaled.JPG")
+        self.flappyBirdLabel.setPixmap(self.flappyBirdImage)
+        self.flappyBirdLabel.move(420,590)
+
+        self.flappyBirdText = QLabel("Make the bird fly through as\n"+
+                                     "many pipes as possible!\n\n" +
+                                     "Key bindings used: up, enter", self)
+        self.flappyBirdText.setStyleSheet("font-size: 14px;")
+        self.flappyBirdText.move(190,565)
+        self.flappyBirdText.resize(250, 200)
+
         self.flappyBirdButton = QPushButton(self)
-        self.flappyBirdButton.setText("Flappy Bird")
-        self.flappyBirdButton.move(345,435)
+        self.flappyBirdButton.setText("Play Flappy Bird")
+        #self.flappyBirdButton.move(345,435)
+        self.flappyBirdButton.move(200,745)
         self.flappyBirdButton.resize(150, 30)
-        self.flappyBirdButton.setStyleSheet("background-color : #beb4c5; font-size: 14px;")
+        self.flappyBirdButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.flappyBirdButton, True)
 
         self.goBackButton = QPushButton(self)
@@ -45,9 +88,9 @@ class ChooseGameUI(QWidget):
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
-class changeControlsUI(QWidget):
+class ChangeControlsUI(QWidget):
     def __init__(self, parent=None):
-        super(changeControlsUI, self).__init__(parent)
+        super(ChangeControlsUI, self).__init__(parent)
         self.title = QLabel("<b> Change controls", self)
         #self.title.move(125,90)
         self.title.move(360,275)
@@ -159,11 +202,11 @@ class changeControlsUI(QWidget):
         self.goBackButton.setFocus()
         QPushButton.setAutoDefault(self.goBackButton, True)
 
-class tutorialUI(QWidget):
+class TutorialUI(QWidget):
     def __init__(self, parent=None):
-        super(tutorialUI, self).__init__(parent)
-        self.title = QLabel("<b> Tutorial for Super Mario", self)
-        self.title.move(330,90)
+        super(TutorialUI, self).__init__(parent)
+        self.title = QLabel("<b> Tutorial", self)
+        self.title.move(385,90)
         self.title.resize(350, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
@@ -173,10 +216,10 @@ class tutorialUI(QWidget):
         self.upGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.upGif.start()
         self.upGifLabel.setMovie(self.upGif)
-        self.upGifText = QLabel("Move hand up", self)
+        self.upGifText = QLabel("Move hand up, corresponding to up arrow key", self)
         self.upGifText.setStyleSheet("font-size: 14px;")
-        self.upGifText.move(195,240)
-        self.upGifText.resize(120, 200)
+        self.upGifText.move(98,240)
+        self.upGifText.resize(300, 200)
 
         self.downGifLabel = QLabel("", self)
         self.downGifLabel.move(100,370)
@@ -184,10 +227,10 @@ class tutorialUI(QWidget):
         self.downGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
-        self.downGifText = QLabel("Move hand down", self)
+        self.downGifText = QLabel("Move hand down, corresponding to down arrow key", self)
         self.downGifText.setStyleSheet("font-size: 14px;")
-        self.downGifText.move(184,450)
-        self.downGifText.resize(120, 200)
+        self.downGifText.move(75,450)
+        self.downGifText.resize(330, 200)
 
         self.enterGifLabel = QLabel("", self)
         self.enterGifLabel.move(100,580)
@@ -195,14 +238,14 @@ class tutorialUI(QWidget):
         self.enterGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.enterGif.start()
         self.enterGifLabel.setMovie(self.enterGif)
-        self.enterGifText = QLabel("Move hand left", self)
+        self.enterGifText = QLabel("Move hand left, corresponding to left arrow key", self)
         self.enterGifText.setStyleSheet("font-size: 14px;")
-        self.enterGifText.move(192,660)
-        self.enterGifText.resize(120, 200)
+        self.enterGifText.move(95,660)
+        self.enterGifText.resize(340, 200)
 
         self.nextButton = QPushButton(self)
         self.nextButton.setText("Next page")
-        self.nextButton.move(440,800)
+        self.nextButton.move(460,800)
         self.nextButton.resize(100, 30)
         self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.nextButton.setFocus()
@@ -215,11 +258,11 @@ class tutorialUI(QWidget):
         self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
-class tutorialSecondPageUI(QWidget):
+class TutorialSecondPageUI(QWidget):
     def __init__(self, parent=None):
-        super(tutorialSecondPageUI, self).__init__(parent)
-        self.title = QLabel("<b> Tutorial for Super Mario", self)
-        self.title.move(330,90)
+        super(TutorialSecondPageUI, self).__init__(parent)
+        self.title = QLabel("<b> Tutorial", self)
+        self.title.move(385,90)
         self.title.resize(350, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
@@ -229,10 +272,10 @@ class tutorialSecondPageUI(QWidget):
         self.upGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.upGif.start()
         self.upGifLabel.setMovie(self.upGif)
-        self.upGifText = QLabel("Move hand right", self)
+        self.upGifText = QLabel("Move hand right, corresponding to right arrow key", self)
         self.upGifText.setStyleSheet("font-size: 14px;")
-        self.upGifText.move(190,240)
-        self.upGifText.resize(120, 200)
+        self.upGifText.move(86,240)
+        self.upGifText.resize(340, 200)
 
         self.downGifLabel = QLabel("", self)
         self.downGifLabel.move(100,370)
@@ -240,10 +283,10 @@ class tutorialSecondPageUI(QWidget):
         self.downGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
-        self.downGifText = QLabel("Move hand up to the right", self)
+        self.downGifText = QLabel("Move hand up to the right, corresponding to \nright + up arrow key", self)
         self.downGifText.setStyleSheet("font-size: 14px;")
-        self.downGifText.move(160,450)
-        self.downGifText.resize(220, 200)
+        self.downGifText.move(103,450)
+        self.downGifText.resize(350, 200)
 
         self.enterGifLabel = QLabel("", self)
         self.enterGifLabel.move(100,580)
@@ -251,10 +294,10 @@ class tutorialSecondPageUI(QWidget):
         self.enterGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.enterGif.start()
         self.enterGifLabel.setMovie(self.enterGif)
-        self.enterGifText = QLabel("Move hand up to the left", self)
+        self.enterGifText = QLabel("Move hand up to the left, corresponding to \nleft + up arrow key", self)
         self.enterGifText.setStyleSheet("font-size: 14px;")
-        self.enterGifText.move(165,660)
-        self.enterGifText.resize(220, 200)
+        self.enterGifText.move(107,660)
+        self.enterGifText.resize(350, 200)
 
         self.previousButton = QPushButton(self)
         self.previousButton.setText("Previous page")
@@ -266,7 +309,7 @@ class tutorialSecondPageUI(QWidget):
 
         self.nextButton = QPushButton(self)
         self.nextButton.setText("Next page")
-        self.nextButton.move(440,800)
+        self.nextButton.move(460,800)
         self.nextButton.resize(100, 30)
         self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.nextButton, True)
@@ -278,11 +321,11 @@ class tutorialSecondPageUI(QWidget):
         self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
-class tutorialThirdPageUI(QWidget):
+class TutorialThirdPageUI(QWidget):
     def __init__(self, parent=None):
-        super(tutorialThirdPageUI, self).__init__(parent)
-        self.title = QLabel("<b> Tutorial for Super Mario", self)
-        self.title.move(330,90)
+        super(TutorialThirdPageUI, self).__init__(parent)
+        self.title = QLabel("<b> Tutorial", self)
+        self.title.move(385,90)
         self.title.resize(350, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
@@ -292,10 +335,10 @@ class tutorialThirdPageUI(QWidget):
         self.upGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.upGif.start()
         self.upGifLabel.setMovie(self.upGif)
-        self.upGifText = QLabel("Show peace sign", self)
+        self.upGifText = QLabel("Show peace sign, corresponding to escape key", self)
         self.upGifText.setStyleSheet("font-size: 14px;")
-        self.upGifText.move(190,240)
-        self.upGifText.resize(120, 200)
+        self.upGifText.move(97,240)
+        self.upGifText.resize(320, 200)
 
         self.downGifLabel = QLabel("", self)
         self.downGifLabel.move(100,370)
@@ -303,10 +346,10 @@ class tutorialThirdPageUI(QWidget):
         self.downGif.setScaledSize(QtCore.QSize().scaled(280, 160, QtCore.Qt.IgnoreAspectRatio))
         self.downGif.start()
         self.downGifLabel.setMovie(self.downGif)
-        self.downGifText = QLabel("Show index finger", self)
+        self.downGifText = QLabel("Show index finger, corresponding to enter key", self)
         self.downGifText.setStyleSheet("font-size: 14px;")
-        self.downGifText.move(185,450)
-        self.downGifText.resize(120, 200)
+        self.downGifText.move(97,450)
+        self.downGifText.resize(320, 200)
 
         self.previousButton = QPushButton(self)
         self.previousButton.setText("Previous page")
@@ -323,17 +366,28 @@ class tutorialThirdPageUI(QWidget):
         self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
-class useWithExtUI(QWidget):
+class UseWithExtUI(QWidget):
     def __init__(self, parent=None):
-        super(useWithExtUI, self).__init__(parent)
+        super(UseWithExtUI, self).__init__(parent)
         self.title = QLabel("<b> Use with external game", self)
         self.title.move(322,275)
         self.title.resize(250, 60) 
         self.title.setStyleSheet("font-size: 18px;")
 
+        self.text = QLabel("Our selection of games doesn't include your favorite one?\n"+
+                           "No worries! You can use the hand recognition functionality\n"+
+                           "with other games as well. To check if it's compatible with\n" +
+                           "the game you wish to play, please check the tutorial to see\n" +
+                           "the implemented key bindings. When all is done you can\n"+
+                           "minimize this menu if you wish and play away! Just make sure\n"+
+                           "that the game you're going to play is the active window.", self)
+        self.text.setStyleSheet("font-size: 14px;")
+        self.text.move(260,275)
+        self.text.resize(400, 300)
+
         self.minimizeButton = QPushButton(self)
-        self.minimizeButton.setText("Minimize UI")
-        self.minimizeButton.move(350,335)
+        self.minimizeButton.setText("Minimize")
+        self.minimizeButton.move(350,550)
         self.minimizeButton.resize(150, 30)
         self.minimizeButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
         self.minimizeButton.setFocus()
@@ -442,31 +496,31 @@ class MainWindow(QMainWindow):
         self.mainMenu()
 
     def mainMenu(self):
-        self.MainMenuUI = MainMenuUI(self)
+        self.mainMenuUI = MainMenuUI(self)
         self.setWindowTitle("Main menu")
-        self.setCentralWidget(self.MainMenuUI)
-        self.MainMenuUI.gameButton.clicked.connect(self.chooseGame)
-        self.MainMenuUI.extButton.clicked.connect(self.useWithExt)
-        #self.MainMenuUI.controlButton.clicked.connect(self.changeControls)
-        self.MainMenuUI.tutorialButton.clicked.connect(self.tutorial)
-        self.MainMenuUI.closeButton.clicked.connect(self.close)
+        self.setCentralWidget(self.mainMenuUI)
+        self.mainMenuUI.gameButton.clicked.connect(self.chooseGame)
+        self.mainMenuUI.extButton.clicked.connect(self.useWithExt)
+        #self.mainMenuUI.controlButton.clicked.connect(self.changeControls)
+        self.mainMenuUI.tutorialButton.clicked.connect(self.tutorial)
+        self.mainMenuUI.closeButton.clicked.connect(self.close)
         self.show()
 
     def chooseGame(self):
-        self.ChooseGameUI = ChooseGameUI(self)
+        self.chooseGameUI = ChooseGameUI(self)
         self.setWindowTitle("Choose game")
-        self.setCentralWidget(self.ChooseGameUI)
-        self.ChooseGameUI.marioButton.clicked.connect(self.startMario)
-        self.ChooseGameUI.snakeButton.clicked.connect(self.startSnake)
-        #self.ChooseGameUI.flappyBirdButton.clicked.connect()
-        self.ChooseGameUI.goBackButton.clicked.connect(self.mainMenu)
+        self.setCentralWidget(self.chooseGameUI)
+        self.chooseGameUI.marioButton.clicked.connect(self.startMario)
+        self.chooseGameUI.snakeButton.clicked.connect(self.startSnake)
+        #self.chooseGameUI.flappyBirdButton.clicked.connect()
+        self.chooseGameUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
         #keyboard.press(Key.tab)
         #keyboard.release(Key.tab)
         #self.doInput()
 
     def useWithExt(self):
-        self.useWithExtUI = useWithExtUI(self)
+        self.useWithExtUI = UseWithExtUI(self)
         self.setWindowTitle("Use with external game")
         self.setCentralWidget(self.useWithExtUI)
         self.useWithExtUI.minimizeButton.clicked.connect(self.minimizeWindow)
@@ -474,14 +528,14 @@ class MainWindow(QMainWindow):
         self.show()
 
     def changeControls(self):
-        self.changeControlsUI = changeControlsUI(self)
+        self.changeControlsUI = ChangeControlsUI(self)
         self.setWindowTitle("Change controls")
         self.setCentralWidget(self.changeControlsUI)
         self.changeControlsUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
 
     def tutorial(self):
-        self.tutorialUI = tutorialUI(self)
+        self.tutorialUI = TutorialUI(self)
         self.setWindowTitle("Tutorial")
         self.setCentralWidget(self.tutorialUI)
         self.tutorialUI.goBackButton.clicked.connect(self.mainMenu)
@@ -489,7 +543,7 @@ class MainWindow(QMainWindow):
         self.show()
         
     def tutorialSecondPage(self):
-        self.tutorialSecondPageUI = tutorialSecondPageUI(self)
+        self.tutorialSecondPageUI = TutorialSecondPageUI(self)
         self.setWindowTitle("Tutorial")
         self.setCentralWidget(self.tutorialSecondPageUI)
         self.tutorialSecondPageUI.goBackButton.clicked.connect(self.mainMenu)
@@ -498,7 +552,7 @@ class MainWindow(QMainWindow):
         self.show()
         
     def tutorialThirdPage(self):
-        self.tutorialThirdPageUI = tutorialThirdPageUI(self)
+        self.tutorialThirdPageUI = TutorialThirdPageUI(self)
         self.setWindowTitle("Tutorial")
         self.setCentralWidget(self.tutorialThirdPageUI)
         self.tutorialThirdPageUI.goBackButton.clicked.connect(self.mainMenu)
