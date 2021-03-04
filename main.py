@@ -6,8 +6,6 @@ from pynput import keyboard as kb
 from handRecognition import recognizeLeftHandGesture, recognizeRightHandGesture, getStructuredLandmarks
 import subprocess
 
-subprocess.Popen("python menu.py")
-
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 keyboard = Controller()
@@ -15,12 +13,11 @@ currentDirection = ""
 currentDirectionKey = []
 isPressingEnter = False
 isPressingEscape= False
+menuStarted = False
 # For webcam input:
 hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
 cap = cv2.VideoCapture(0)
-
-
 
 image_width = cap.get(3)
 image_height = cap.get(4)
@@ -157,6 +154,12 @@ while cap.isOpened():
     
 
   cv2.imshow('MediaPipe Hands', image)
+
+  #Open the menu after the hand is shown (This is to ensure that the menu allways is selected)
+  if menuStarted == False:
+      menuStarted = True
+      subprocess.Popen("python menu.py")
+
   if cv2.waitKey(5) & 0xFF == 9:
     break
 hands.close()
