@@ -589,7 +589,7 @@ class MainWindow(QMainWindow):
         self.setCentralWidget(self.chooseGameUI)
         self.chooseGameUI.marioButton.clicked.connect(self.startMario)
         self.chooseGameUI.snakeButton.clicked.connect(self.startSnake)
-        #self.chooseGameUI.flappyBirdButton.clicked.connect()
+        self.chooseGameUI.flappyBirdButton.clicked.connect(self.startFlappy)
         self.chooseGameUI.goBackButton.clicked.connect(self.mainMenu)
         self.show()
         #keyboard.press(Key.tab)
@@ -643,6 +643,9 @@ class MainWindow(QMainWindow):
     def startSnake(self):
         os.system('cmd /c "cd ./games/snake/ && python snake.py"')
         # os.system('cmd /c "cd ./games/snake/"')
+
+    def startFlappy(self):
+        os.system('cmd /c "cd ./games/flappy_bird/ && python main.py"')
         
     def minimizeWindow(self):
         self.showMinimized()
