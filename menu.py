@@ -24,15 +24,15 @@ class ChooseGameUI(QWidget):
                                 "Super Mario. Collect all the\n" +
                                 "coins and clear all the levels!\n\n" +
                                 "Key bindings used: left, right, up,\n" +
-                                "escape, enter", self)
+                                "escape (pause/go back), enter (select)", self)
         self.marioText.setStyleSheet("font-size: 14px;")
-        self.marioText.move(190,85)
+        self.marioText.move(165,85)
         self.marioText.resize(250, 200)
 
         self.marioButton = QPushButton(self)
         self.marioButton.setText("Play Super Mario")
         #self.marioButton.move(345,335)
-        self.marioButton.move(200,260)
+        self.marioButton.move(185,260)
         self.marioButton.resize(150, 30)
         self.marioButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         self.marioButton.setFocus()
@@ -47,15 +47,15 @@ class ChooseGameUI(QWidget):
                                 "many red points as you can.\n"+
                                 "Just don't get tangled up!\n\n"+
                                 "Key bindings used: left, right, up\n"+
-                                "down, escape, enter", self)
+                                "down, escape (pause), enter (continue)", self)
         self.snakeText.setStyleSheet("font-size: 14px;")
-        self.snakeText.move(190,320)
+        self.snakeText.move(165,320)
         self.snakeText.resize(250, 200)
 
         self.snakeButton = QPushButton(self)
         self.snakeButton.setText("Play Snake")
         #self.snakeButton.move(345,385)
-        self.snakeButton.move(200,490)
+        self.snakeButton.move(185,490)
         self.snakeButton.resize(150, 30)
         self.snakeButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.snakeButton, True)
@@ -69,13 +69,13 @@ class ChooseGameUI(QWidget):
                                      "many pipes as possible!\n\n" +
                                      "Key bindings used: up, enter", self)
         self.flappyBirdText.setStyleSheet("font-size: 14px;")
-        self.flappyBirdText.move(190,565)
+        self.flappyBirdText.move(175,565)
         self.flappyBirdText.resize(250, 200)
 
         self.flappyBirdButton = QPushButton(self)
         self.flappyBirdButton.setText("Play Flappy Bird")
         #self.flappyBirdButton.move(345,435)
-        self.flappyBirdButton.move(200,745)
+        self.flappyBirdButton.move(185,745)
         self.flappyBirdButton.resize(150, 30)
         self.flappyBirdButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.flappyBirdButton, True)
