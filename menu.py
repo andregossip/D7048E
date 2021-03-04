@@ -562,7 +562,6 @@ class MainWindow(QMainWindow):
     def startMario(self):
         os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
         # os.system('cmd /c "cd ./games/super_mario/"')
-
     def startSnake(self):
         os.system('cmd /c "cd ./games/snake/ && python snake.py"')
         # os.system('cmd /c "cd ./games/snake/"')
