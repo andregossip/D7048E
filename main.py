@@ -74,64 +74,65 @@ while cap.isOpened():
             keypoints.append(landmark.y)
 
         if recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2 and currentKey != "esc":
-            print('esc')
+            #print('esc')
             doInput([Key.esc], currentKey, currentKeyLabels)
             currentKey = "esc"
             currentKeyLabels = [Key.esc]
         elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1 and currentKey != "enter":
-            print('enter')
-            doInput([Key.enter], currentKey, currentKeyLabels)
             currentKey = "enter"
-            currentKeyLabels = [Key.enter]
-        #right
-        elif x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
-            print('right')
-            doInput([Key.right], currentKey, currentKeyLabels)
-            currentKey = "right"
-            currentKeyLabels = [Key.right]
-        #left
-        elif x < (image_width/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "left":
-            print('left')
-            doInput([Key.left], currentKey, currentKeyLabels)
-            currentKey = "left"
-            currentKeyLabels = [Key.left]
-        #up
-        elif y < image_height/3 and (x < image_width*2/3 and x > image_width/3) and currentKey != "up":
-            print('up')
-            doInput([Key.up], currentKey, currentKeyLabels)
-            currentKey = "up"
-            currentKeyLabels = [Key.up]
-        #down
-        elif y > (image_height * 2/3) and (x < image_width*2/3 and x > image_width/3) and currentKey != "down":
-            print('down')
-            doInput([Key.down], currentKey, currentKeyLabels)
-            currentKey = "down"
-            currentKeyLabels = [Key.down]
-        #up and right
-        elif y < image_height/3 and x > (image_width * 2/3) and currentKey != "upRight":
-            doInput([Key.up, Key.right], currentKey, currentKeyLabels)
-            currentKey = "upRight"
-            currentKeyLabels = [Key.up, Key.right]
-        #up and left
-        elif x < image_width/3 and y < image_height/3 and currentKey != "upLeft":
-            doInput([Key.up, Key.left], currentKey, currentKeyLabels)
-            currentKey = "upLeft"
-            currentKeyLabels = [Key.up, Key.left]
-        #down and left
-        elif x < image_width/3 and y > image_height * 2/3 and currentKey != "downLeft":
-            doInput([Key.down, Key.left], currentKey, currentKeyLabels)
-            currentKey = "downLeft"
-            currentKeyLabels = [Key.down, Key.left]
-        #down and right
-        elif x > image_width * 2/3 and y > image_height * 2/3 and currentKey != "downRight":
-            doInput([Key.down, Key.right], currentKey, currentKeyLabels)
-            currentKey = "downRight"
-            currentKeyLabels = [Key.down, Key.right]
-        #Stop
-        elif (image_width / 3 < x < image_width * 2 / 3) and (y > image_height / 3 and y < image_height * 2 / 3) and currentKey != "":
-            realeseInput(currentKey, currentKeyLabels)
-            currentKey = ""
-            currentKeyLabels = []
+            keyboard.tap(Key.enter)
+            #doInput([Key.enter], currentKey, currentKeyLabels)
+            #currentKeyLabels = [Key.enter]
+        else:
+            #right
+            if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
+                #print('right')
+                doInput([Key.right], currentKey, currentKeyLabels)
+                currentKey = "right"
+                currentKeyLabels = [Key.right]
+            #left
+            elif x < (image_width/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "left":
+                #print('left')
+                doInput([Key.left], currentKey, currentKeyLabels)
+                currentKey = "left"
+                currentKeyLabels = [Key.left]
+            #up
+            elif y < image_height/3 and (x < image_width*2/3 and x > image_width/3) and currentKey != "up":
+                #print('up')
+                doInput([Key.up], currentKey, currentKeyLabels)
+                currentKey = "up"
+                currentKeyLabels = [Key.up]
+            #down
+            elif y > (image_height * 2/3) and (x < image_width*2/3 and x > image_width/3) and currentKey != "down":
+                #print('down')
+                doInput([Key.down], currentKey, currentKeyLabels)
+                currentKey = "down"
+                currentKeyLabels = [Key.down]
+            #up and right
+            elif y < image_height/3 and x > (image_width * 2/3) and currentKey != "upRight":
+                doInput([Key.up, Key.right], currentKey, currentKeyLabels)
+                currentKey = "upRight"
+                currentKeyLabels = [Key.up, Key.right]
+            #up and left
+            elif x < image_width/3 and y < image_height/3 and currentKey != "upLeft":
+                doInput([Key.up, Key.left], currentKey, currentKeyLabels)
+                currentKey = "upLeft"
+                currentKeyLabels = [Key.up, Key.left]
+            #down and left
+            elif x < image_width/3 and y > image_height * 2/3 and currentKey != "downLeft":
+                doInput([Key.down, Key.left], currentKey, currentKeyLabels)
+                currentKey = "downLeft"
+                currentKeyLabels = [Key.down, Key.left]
+            #down and right
+            elif x > image_width * 2/3 and y > image_height * 2/3 and currentKey != "downRight":
+                doInput([Key.down, Key.right], currentKey, currentKeyLabels)
+                currentKey = "downRight"
+                currentKeyLabels = [Key.down, Key.right]
+            #Stop
+            elif (image_width / 3 < x < image_width * 2 / 3) and (y > image_height / 3 and y < image_height * 2 / 3) and currentKey != "":
+                realeseInput(currentKey, currentKeyLabels)
+                currentKey = ""
+                currentKeyLabels = []
 
         mp_drawing.draw_landmarks(
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
