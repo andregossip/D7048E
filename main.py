@@ -66,6 +66,7 @@ while cap.isOpened():
   if results.multi_hand_landmarks:
     keypoints = []
     for hand_landmarks in results.multi_hand_landmarks:
+        print(currentKey)
         x = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].x * image_width
         y = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].y * image_height
 
@@ -79,10 +80,10 @@ while cap.isOpened():
             currentKey = "esc"
             currentKeyLabels = [Key.esc]
         elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1 and currentKey != "enter":
+            #print("ENTER")
             currentKey = "enter"
-            keyboard.tap(Key.enter)
-            #doInput([Key.enter], currentKey, currentKeyLabels)
-            #currentKeyLabels = [Key.enter]
+            doInput([Key.enter], currentKey, currentKeyLabels)
+            currentKeyLabels = [Key.enter]
         else:
             #right
             if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
@@ -129,7 +130,7 @@ while cap.isOpened():
                 currentKey = "downRight"
                 currentKeyLabels = [Key.down, Key.right]
             #Stop
-            elif (image_width / 3 < x < image_width * 2 / 3) and (y > image_height / 3 and y < image_height * 2 / 3) and currentKey != "":
+            elif (image_width / 3 < x < image_width * 2 / 3) and (y > image_height / 3 and y < image_height * 2 / 3) and currentKey != ("" or "enter" or "esc"):
                 realeseInput(currentKey, currentKeyLabels)
                 currentKey = ""
                 currentKeyLabels = []
