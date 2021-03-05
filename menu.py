@@ -6,6 +6,7 @@ import os
 import signal
 from pynput.keyboard import Key, Controller, Listener
 from pynput import keyboard
+import subprocess
 
 class ChooseGameUI(QWidget):
     def __init__(self, parent=None):
@@ -679,4 +680,3 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = MainWindow()
     sys.exit(app.exec_())
-    os.kill(os.getppid(), signal.SIGTERM)

@@ -153,7 +153,7 @@ while cap.isOpened():
   if cv2.waitKey(5) & 0xFF == 110:
     break
 
-
+childProcess.terminate()
 childProcess.kill()
 hands.close()
 cap.release()
