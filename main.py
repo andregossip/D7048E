@@ -14,6 +14,7 @@ currentKey = ""
 currentKeyLabels = []
 menuStarted = False
 show = True
+childProcess = None
 
 # For webcam input:
 hands = mp_hands.Hands(
@@ -67,7 +68,6 @@ while cap.isOpened():
   if results.multi_hand_landmarks:
     keypoints = []
     for hand_landmarks in results.multi_hand_landmarks:
-        print(currentKey)
         x = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].x * image_width
         y = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_MCP].y * image_height
 
@@ -144,7 +144,11 @@ while cap.isOpened():
   #Open the menu after the hand is shown (This is to ensure that the menu allways is selected)
   if menuStarted == False:
       menuStarted = True
-      subprocess.Popen("python menu.py")
+      childProcess = subprocess.Popen("python menu.py")
+
+  poll = childProcess.poll()
+  if poll is not None:
+    break
 
   if cv2.waitKey(5) & 0xFF == 110:
     break

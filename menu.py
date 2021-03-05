@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QMovie, QPixmap
 from PyQt5.QtWidgets import QComboBox, QMessageBox, QApplication , QMainWindow , QPushButton , QWidget, QLabel
 import os
+import signal
 from pynput.keyboard import Key, Controller, Listener
 from pynput import keyboard
 
@@ -676,3 +677,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = MainWindow()
     sys.exit(app.exec_())
+    os.kill(os.getppid(), signal.SIGTERM)
