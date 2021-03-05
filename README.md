@@ -51,7 +51,6 @@ python main.py
 After running the last command the menu interface and the camera interface will open. In order to navigate through the menu with your hand movements the menu has to be the active window. The same goes for when you play a game, the game has to be the active window for it to work.
 
 ## 4. Current errors
-- Currently ONLY THE RIGHT HAND IS AVAILABLE
 - Super Mario & Flappy Bird: Not possible to use the hand movements corresponding to the enter and escape key. When playing the game you therefore have to use the escape key to pause and enter key to select an option in the game menu.
 - Two hands may create unwanted actions
 - Other hand gestures than shown in the tutorial may create unwanted actions
