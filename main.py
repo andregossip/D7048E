@@ -83,8 +83,8 @@ while cap.isOpened():
             doInput([Key.enter], currentKey, currentKeyLabels)
             currentKey = "enter"
             currentKeyLabels = [Key.enter]
-        elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 9:
-            cap.release()
+        #elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 9:
+        #    cap.release()
         else:
             #right
             if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
