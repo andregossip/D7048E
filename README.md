@@ -11,6 +11,23 @@ Pip
 ## 3. Installing and running the program
 ###  Set up environment
 Use for example Anaconda or similar to create a new environment.
+To create the environment:
+
+```bash
+python3 -m venv /path/to/new/virtual/environment
+```
+
+Then activate the environment to be able to install the dependencies after:
+
+On Windows:
+```bash
+./pathtoenv/Scripts/activate.bat
+```
+
+On Linux:
+```bash
+source ./pathtoenv/bin/activate
+```
 
 ### Open the terminal and do the following steps to start the program:
 
