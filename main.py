@@ -154,5 +154,6 @@ while cap.isOpened():
     break
 
 
+childProcess.kill()
 hands.close()
 cap.release()
