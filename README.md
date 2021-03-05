@@ -54,7 +54,6 @@ After running the last command the menu interface and the camera interface will 
 - Other hand gestures than shown in the tutorial may create unwanted actions
 - Menu may close randomly
 - Game window can not be closed with hand gesture
-- It is not possible to click a button twice in a row without making some other recognized gesture in between.
 
 ## 5. References
 ### Hand recognition: 
