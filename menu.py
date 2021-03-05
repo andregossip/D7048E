@@ -6,6 +6,7 @@ import os
 import signal
 from pynput.keyboard import Key, Controller, Listener
 from pynput import keyboard
+from PyQt5.QtCore import Qt
 
 class ChooseGameUI(QWidget):
     def __init__(self, parent=None):
@@ -90,8 +91,7 @@ class ChooseGameUI(QWidget):
         self.goBackButton.resize(100, 30)
         self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
         # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
-        QPushButton.setAutoDefault(self.goBackButton, True)
-        
+        QPushButton.setAutoDefault(self.goBackButton, True)       
 
 class ChangeControlsUI(QWidget):
     def __init__(self, parent=None):
@@ -491,7 +491,6 @@ class UseWithExtUI(QWidget):
         # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
         
-
 class MainMenuUI(QWidget):
     def __init__(self, parent=None):
         super(MainMenuUI, self).__init__(parent)
@@ -586,7 +585,6 @@ class MainMenuUI(QWidget):
         self.enterGifText.move(507,720)
         self.enterGifText.resize(150, 200)
 
-
 class MainWindow(QMainWindow):
     def __init__(self, parent=None):
         super(MainWindow, self).__init__(parent)
@@ -661,18 +659,29 @@ class MainWindow(QMainWindow):
         self.show()
 
     def startMario(self):
+        self.showMinimized()
         os.system('cmd /c "cd ./games/super_mario/ && python main.py"')
+        self.check_state()
         # os.system('cmd /c "cd ./games/super_mario/"')
 
     def startSnake(self):
+        self.showMinimized()
         os.system('cmd /c "cd ./games/snake/ && python snake.py"')
+        self.check_state()
         # os.system('cmd /c "cd ./games/snake/"')
 
     def startFlappy(self):
+        self.showMinimized()
         os.system('cmd /c "cd ./games/flappy_bird/ && python main.py"')
+        self.check_state()
         
     def minimizeWindow(self):
         self.showMinimized()
+
+    def check_state(self):
+        if self.windowState() == Qt.WindowMinimized:
+            # Window is minimised. Restore it.
+            self.setWindowState(Qt.WindowNoState)
 
 
 if __name__ == '__main__':
