@@ -34,7 +34,8 @@ class ChooseGameUI(QWidget):
         #self.marioButton.move(345,335)
         self.marioButton.move(185,260)
         self.marioButton.resize(150, 30)
-        self.marioButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
+        self.marioButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.marioButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         self.marioButton.setFocus()
         QPushButton.setAutoDefault(self.marioButton, True)
 
@@ -57,7 +58,8 @@ class ChooseGameUI(QWidget):
         #self.snakeButton.move(345,385)
         self.snakeButton.move(185,490)
         self.snakeButton.resize(150, 30)
-        self.snakeButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
+        self.snakeButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.snakeButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.snakeButton, True)
 
         self.flappyBirdLabel = QLabel("", self)
@@ -77,14 +79,16 @@ class ChooseGameUI(QWidget):
         #self.flappyBirdButton.move(345,435)
         self.flappyBirdButton.move(185,745)
         self.flappyBirdButton.resize(150, 30)
-        self.flappyBirdButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
+        self.flappyBirdButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.flappyBirdButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.flappyBirdButton, True)
 
         self.goBackButton = QPushButton(self)
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
@@ -280,7 +284,8 @@ class TutorialUI(QWidget):
         self.nextButton.setText("Next page")
         self.nextButton.move(460,800)
         self.nextButton.resize(100, 30)
-        self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.nextButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.nextButton.setFocus()
         QPushButton.setAutoDefault(self.nextButton, True)
         
@@ -288,7 +293,8 @@ class TutorialUI(QWidget):
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
 class TutorialSecondPageUI(QWidget):
@@ -369,7 +375,8 @@ class TutorialSecondPageUI(QWidget):
         self.previousButton.setText("Previous page")
         self.previousButton.move(290,800)
         self.previousButton.resize(100, 30)
-        self.previousButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.previousButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.previousButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.previousButton.setFocus()
         QPushButton.setAutoDefault(self.previousButton, True)
 
@@ -377,14 +384,16 @@ class TutorialSecondPageUI(QWidget):
         self.nextButton.setText("Next page")
         self.nextButton.move(460,800)
         self.nextButton.resize(100, 30)
-        self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.nextButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.nextButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.nextButton, True)
         
         self.goBackButton = QPushButton(self)
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
 class TutorialThirdPageUI(QWidget):
@@ -432,7 +441,8 @@ class TutorialThirdPageUI(QWidget):
         self.previousButton.setText("Previous page")
         self.previousButton.move(290,800)
         self.previousButton.resize(100, 30)
-        self.previousButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.previousButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.previousButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         self.previousButton.setFocus()
         QPushButton.setAutoDefault(self.previousButton, True)
         
@@ -440,7 +450,8 @@ class TutorialThirdPageUI(QWidget):
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
 
 class UseWithExtUI(QWidget):
@@ -466,7 +477,8 @@ class UseWithExtUI(QWidget):
         self.minimizeButton.setText("Minimize")
         self.minimizeButton.move(350,550)
         self.minimizeButton.resize(150, 30)
-        self.minimizeButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
+        self.minimizeButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.minimizeButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
         self.minimizeButton.setFocus()
         QPushButton.setAutoDefault(self.minimizeButton, True)
 
@@ -474,7 +486,8 @@ class UseWithExtUI(QWidget):
         self.goBackButton.setText("Go back")
         self.goBackButton.move(10,890)
         self.goBackButton.resize(100, 30)
-        self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
+        self.goBackButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.goBackButton.setStyleSheet("background-color : #ffffff; font-size: 14px;")
         QPushButton.setAutoDefault(self.goBackButton, True)
         
 
@@ -486,47 +499,55 @@ class MainMenuUI(QWidget):
         self.title.move(152,275)
         self.title.resize(120, 60) 
         self.title.setStyleSheet("font-size: 18px;")
-
+        
         self.gameButton = QPushButton(self)
+        # self.gameButton.setStyleSheet(
+        # "QPushButton { background-color: blue; color: #ffffff; outline: none }"
+        # );
+        self.gameButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
         self.gameButton.setText("Choose game")
         #self.gameButton.move(130,150)
-        self.gameButton.move(130,335)
-        self.gameButton.resize(150, 30)
-        self.gameButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
+        self.gameButton.move(115,335)
+        self.gameButton.resize(180, 30)
+        # self.gameButton.setStyleSheet("background-color : #F5bfd2; font-size: 14px;")
         self.gameButton.setFocus()
         QPushButton.setAutoDefault(self.gameButton, True)
 
         self.extButton = QPushButton(self)
         self.extButton.setText("Use with external game")
         #self.extButton.move(130,200)
-        self.extButton.move(130,385)
-        self.extButton.resize(150, 30)
-        self.extButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
+        self.extButton.move(115,385)
+        self.extButton.resize(180, 30)
+        self.extButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.extButton.setStyleSheet("background-color : #a1cdce; font-size: 14px;")
         QPushButton.setAutoDefault(self.extButton, True)
 
         self.controlButton = QPushButton(self)
         self.controlButton.setText("Change controls")
         #self.controlButton.move(130,250)
-        self.controlButton.move(130,435)
-        self.controlButton.resize(150, 30)
-        self.controlButton.setStyleSheet("background-color : #e5db9c; font-size: 14px;")
+        self.controlButton.move(115,435)
+        self.controlButton.resize(180, 30)
+        self.controlButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.controlButton.setStyleSheet("background-color : #e5db9c; font-size: 14px;")
         QPushButton.setAutoDefault(self.controlButton, True)
 
         self.tutorialButton = QPushButton(self)
         self.tutorialButton.setText("Tutorial")
         #self.tutorialButton.move(130,300)
-        self.tutorialButton.move(130,485)
-        self.tutorialButton.resize(150, 30)
-        self.tutorialButton.setStyleSheet("background-color : #beb4c5; font-size: 14px;")
+        self.tutorialButton.move(115,485)
+        self.tutorialButton.resize(180, 30)
+        self.tutorialButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.tutorialButton.setStyleSheet("background-color : #beb4c5; font-size: 14px;")
         QPushButton.setAutoDefault(self.tutorialButton, True)
                 
         self.closeButton = QPushButton(self)
         self.closeButton.setText("Close")
         self.closeButton.setShortcut('ESC')
         #self.closeButton.move(130,350)
-        self.closeButton.move(130,535)
-        self.closeButton.resize(150, 30)
-        self.closeButton.setStyleSheet("background-color : #e6a57e; font-size: 14px;")
+        self.closeButton.move(115,535)
+        self.closeButton.resize(180, 30)
+        self.closeButton.setStyleSheet("QPushButton:focus {background-color: #a1cdce; border: none}")
+        # self.closeButton.setStyleSheet("background-color : #e6a57e; font-size: 14px;")
         QPushButton.setAutoDefault(self.closeButton, True)
 
         self.upGifLabel = QLabel("", self)
