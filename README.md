@@ -6,9 +6,9 @@ This is a program consisting of 2D games that you play on your computer. Instead
 
 The target audience for this is anyone with a computer and webcam that wants to try a different way of playing a game. What we wish to achieve with this game is a fun experience for anyone that wants to try it. The goal is that it should be easy to understand and learn how to play and navigate through the game. We want to make a game that is fun for everyone to play alone as well as together with their friends!
 ## 2. Requirements
-Python 3.7 or higher,
-Pip,
-Only supported on Windows
+- Python 3.7 or higher
+- Pip
+- Only supported on Windows
 ## 3. Installing and running the program
 ###  Set up environment
 Use for example Anaconda or similar to create a new environment.
