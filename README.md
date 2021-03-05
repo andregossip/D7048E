@@ -13,13 +13,13 @@ The target audience for this is anyone with a computer and webcam that wants to 
 ###  Set up environment
 Use for example Anaconda or similar to create a new environment.
 
-To create the environment, right this in a command prompt:
+To create the environment, write this in a command prompt:
 
 ```bash
 python3 -m venv /path/to/new/virtual/environment
 ```
 
-Then activate the environment to be able to install the dependencies after:
+Then activate the environment to be able to install the dependencies after.
 
 On Windows:
 ```bash
