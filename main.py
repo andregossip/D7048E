@@ -86,8 +86,6 @@ while cap.isOpened():
             currentKey = "enter"
             currentKeyLabels = [Key.enter]
             t0 = time.time()
-        elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 9:
-            cap.release()
         else:
             #right
             if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
