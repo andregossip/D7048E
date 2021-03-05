@@ -11,6 +11,8 @@ mp_hands = mp.solutions.hands
 keyboard = Controller()
 currentKey = ""
 currentKeyLabels = []
+menuStarted = False
+
 # For webcam input:
 hands = mp_hands.Hands(
     min_detection_confidence=0.5, min_tracking_confidence=0.5)
@@ -134,17 +136,6 @@ while cap.isOpened():
 
         mp_drawing.draw_landmarks(
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
-    """
-    if(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2):
-        isPressingEscape = True
-        togglePause()
-    elif(recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1):
-        isPressingEnter = True
-        quitPause()
-    else:
-        isPressingEnter = False
-        isPressingEscape = False
-    """
 
   cv2.imshow('MediaPipe Hands', image)
 
@@ -154,6 +145,7 @@ while cap.isOpened():
       subprocess.Popen("python menu.py")
 
   if cv2.waitKey(5) & 0xFF == 9:
-    break
+      break
+
 hands.close()
 cap.release()
