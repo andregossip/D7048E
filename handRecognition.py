@@ -85,7 +85,9 @@ def recognizeRightHandGesture(landmarks):
     if (thumbState == 'CLOSE' and indexFingerState == 'OPEN' and middleFingerState == 'OPEN' and ringFingerState == 'CLOSE' and littleFingerState == 'CLOSE'):
         recognizedHandGesture = 2 # "TWO"   
     elif (thumbState == 'CLOSE' and indexFingerState == 'OPEN' and middleFingerState == 'CLOSE' and ringFingerState == 'CLOSE' and littleFingerState == 'CLOSE'):
-        recognizedHandGesture = 1 # "TWO"   
+        recognizedHandGesture = 1 # "TWO"
+    elif (thumbState == 'CLOSE' and indexFingerState == 'OPEN' and middleFingerState == 'CLOSE' and ringFingerState == 'CLOSE' and littleFingerState == 'OPEN'):
+        recognizedHandGesture = 9 # "ROCK"
     else:
         recognizedHandGesture = 0 # "UNKNOW"
     return recognizedHandGesture

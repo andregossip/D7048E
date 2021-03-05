@@ -6,12 +6,14 @@ from pynput import keyboard as kb
 from handRecognition import recognizeLeftHandGesture, recognizeRightHandGesture, getStructuredLandmarks
 import subprocess
 
+menuStarted = False
 mp_drawing = mp.solutions.drawing_utils
 mp_hands = mp.solutions.hands
 keyboard = Controller()
 currentKey = ""
 currentKeyLabels = []
 menuStarted = False
+show = True
 
 # For webcam input:
 hands = mp_hands.Hands(
@@ -74,15 +76,15 @@ while cap.isOpened():
             keypoints.append(landmark.y)
 
         if recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 2 and currentKey != "esc":
-            #print('esc')
             doInput([Key.esc], currentKey, currentKeyLabels)
             currentKey = "esc"
             currentKeyLabels = [Key.esc]
         elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 1 and currentKey != "enter":
-            #print("ENTER")
-            currentKey = "enter"
             doInput([Key.enter], currentKey, currentKeyLabels)
+            currentKey = "enter"
             currentKeyLabels = [Key.enter]
+        elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 9:
+            cap.release()
         else:
             #right
             if x > (image_width * 2/3) and (y > image_height/3 and y < image_height * 2/3) and currentKey != "right":
@@ -144,8 +146,9 @@ while cap.isOpened():
       menuStarted = True
       subprocess.Popen("python menu.py")
 
-  if cv2.waitKey(5) & 0xFF == 9:
-      break
+  if cv2.waitKey(5) & 0xFF == 110:
+    break
+
 
 hands.close()
 cap.release()

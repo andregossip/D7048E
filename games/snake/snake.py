@@ -92,9 +92,11 @@ def move():
         x = head.xcor()
         head.setx(x + 20)
 
-    if head.direction == "pause":
+    if head.direction == "pause":       
         x = head.xcor()
+        y = head.ycor()
         head.setx(x)
+        head.sety(y)
 
 def pause():
     if head.direction != "pause":
@@ -173,16 +175,17 @@ while True:
         pen.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("Courier", 24, "normal")) 
 
     # Move the end segments first in reverse order
-    for index in range(len(segments)-1, 0, -1):
-        x = segments[index-1].xcor()
-        y = segments[index-1].ycor()
-        segments[index].goto(x, y)
+    if head.direction != "pause":
+        for index in range(len(segments)-1, 0, -1):
+            x = segments[index-1].xcor()
+            y = segments[index-1].ycor()
+            segments[index].goto(x, y)
 
-    # Move segment 0 to where the head is
-    if len(segments) > 0:
-        x = head.xcor()
-        y = head.ycor()
-        segments[0].goto(x,y)
+        # Move segment 0 to where the head is
+        if len(segments) > 0:
+            x = head.xcor()
+            y = head.ycor()
+            segments[0].goto(x,y)
 
     move()    
 
