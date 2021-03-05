@@ -1,5 +1,5 @@
 # D7048E, Interactive systems design
-##Project in an advanced interface/interaction technology 
+## Project in an advanced interface/interaction technology 
 
 ### Summary
 | Title | Description |
