@@ -5,6 +5,7 @@ from pynput.keyboard import Key, Controller, Listener
 from pynput import keyboard as kb
 from handRecognition import recognizeLeftHandGesture, recognizeRightHandGesture, getStructuredLandmarks
 import subprocess
+import time
 
 menuStarted = False
 mp_drawing = mp.solutions.drawing_utils
@@ -42,6 +43,7 @@ def realeseInput(currentDirection, currentKeyLabels):
     if currentDirection != "":
         for buttons in currentKeyLabels:
             keyboard.release(buttons)
+t0 = time.time()
 
 while cap.isOpened():
   success, image = cap.read()
@@ -83,6 +85,7 @@ while cap.isOpened():
             doInput([Key.enter], currentKey, currentKeyLabels)
             currentKey = "enter"
             currentKeyLabels = [Key.enter]
+            t0 = time.time()
         elif recognizeRightHandGesture(getStructuredLandmarks(keypoints)) == 9:
             cap.release()
         else:
@@ -135,9 +138,13 @@ while cap.isOpened():
                 realeseInput(currentKey, currentKeyLabels)
                 currentKey = ""
                 currentKeyLabels = []
-
         mp_drawing.draw_landmarks(
         image, hand_landmarks, mp_hands.HAND_CONNECTIONS)
+
+    if(currentKey=="enter" and time.time()-t0 > 1):
+        realeseInput(currentKey, currentKeyLabels)
+        currentKey = ""
+        currentKeyLabels = []
 
   cv2.imshow('MediaPipe Hands', image)
 
